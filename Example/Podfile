@@ -1,0 +1,10 @@
+use_frameworks!
+platform :ios, '9.3'
+
+target 'Example' do
+  pod 'Guppy', :path => '../'
+
+  target 'Tests' do
+    inherit! :search_paths
+  end
+end

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Guppy-->
+        <scene sceneID="gZC-Nv-d0U">
+            <objects>
+                <viewController storyboardIdentifier="LogTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="HT6-OX-TjZ" customClass="LogTableViewController" customModule="Guppy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uBQ-jj-2WE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guppy" translatesAutoresizingMaskIntoConstraints="NO" id="taJ-8E-PU6">
+                                <rect key="frame" x="127" y="430" width="120" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="taJ-8E-PU6" secondAttribute="height" multiplier="5:4" id="vYG-zy-KN7"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Riverbed" translatesAutoresizingMaskIntoConstraints="NO" id="TST-43-yC9">
+                                <rect key="frame" x="0.0" y="430" width="375" height="173"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TST-43-yC9" secondAttribute="height" multiplier="375:173" id="n6R-1a-9gs"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="o8q-RT-tA6">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TST-43-yC9" firstAttribute="leading" secondItem="a4I-5L-yLE" secondAttribute="leading" id="9Yp-Ij-KIM"/>
+                            <constraint firstAttribute="bottom" secondItem="TST-43-yC9" secondAttribute="bottom" id="TpU-8m-NAJ"/>
+                            <constraint firstItem="TST-43-yC9" firstAttribute="trailing" secondItem="a4I-5L-yLE" secondAttribute="trailing" id="Y2R-Ht-pyM"/>
+                            <constraint firstAttribute="bottom" secondItem="o8q-RT-tA6" secondAttribute="bottom" id="dgw-tY-hiF"/>
+                            <constraint firstItem="o8q-RT-tA6" firstAttribute="top" secondItem="a4I-5L-yLE" secondAttribute="top" id="dwa-gV-Uoq"/>
+                            <constraint firstItem="taJ-8E-PU6" firstAttribute="top" secondItem="TST-43-yC9" secondAttribute="top" id="eUc-n9-gZh"/>
+                            <constraint firstItem="taJ-8E-PU6" firstAttribute="centerX" secondItem="uBQ-jj-2WE" secondAttribute="centerX" id="olA-Vr-JMF"/>
+                            <constraint firstItem="a4I-5L-yLE" firstAttribute="trailing" secondItem="o8q-RT-tA6" secondAttribute="trailing" id="wC4-rj-DI9"/>
+                            <constraint firstItem="o8q-RT-tA6" firstAttribute="leading" secondItem="a4I-5L-yLE" secondAttribute="leading" id="y9C-qk-pyo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="a4I-5L-yLE"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Guppy" id="kLY-n6-tf8">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Dry-z0-lGE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="oBp-bp-e7S">
+                            <connections>
+                                <action selector="closePressed" destination="HT6-OX-TjZ" id="dv0-Wh-sVS"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="MuE-aI-dZl">
+                            <connections>
+                                <action selector="removeLogs" destination="HT6-OX-TjZ" id="K5C-aq-ejy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
+                    <connections>
+                        <outlet property="tableView" destination="o8q-RT-tA6" id="Agj-NY-pku"/>
+                        <segue destination="Bs0-UH-R8z" kind="show" identifier="LogDetailTableViewController" id="CL3-JG-ulc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciq-kQ-H1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1541.5999999999999" y="169.56521739130437"/>
+        </scene>
+        <!--Request-->
+        <scene sceneID="DUI-Ii-rmd">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Bs0-UH-R8z" customClass="LogDetailTableViewController" customModule="Guppy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PB1-dg-hAq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guppy" translatesAutoresizingMaskIntoConstraints="NO" id="ZCu-PP-JqB">
+                                <rect key="frame" x="128" y="463" width="118" height="96"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nJ0-5a-qzG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="d8b-NK-YZS" firstAttribute="trailing" secondItem="nJ0-5a-qzG" secondAttribute="trailing" id="DRf-uD-soP"/>
+                            <constraint firstItem="d8b-NK-YZS" firstAttribute="bottom" secondItem="ZCu-PP-JqB" secondAttribute="bottom" constant="44" id="T90-uQ-LFx"/>
+                            <constraint firstItem="ZCu-PP-JqB" firstAttribute="centerX" secondItem="PB1-dg-hAq" secondAttribute="centerX" id="Vu7-IS-KjB"/>
+                            <constraint firstItem="d8b-NK-YZS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZCu-PP-JqB" secondAttribute="bottom" constant="44" id="cBz-Eh-osi"/>
+                            <constraint firstAttribute="bottom" secondItem="nJ0-5a-qzG" secondAttribute="bottom" id="e6R-aG-cbg"/>
+                            <constraint firstItem="nJ0-5a-qzG" firstAttribute="leading" secondItem="d8b-NK-YZS" secondAttribute="leading" id="irB-lx-apk"/>
+                            <constraint firstItem="nJ0-5a-qzG" firstAttribute="top" secondItem="d8b-NK-YZS" secondAttribute="top" id="jhA-AO-lnG"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="d8b-NK-YZS"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Request" id="lZe-ph-dC9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="iaM-gs-VVd">
+                            <connections>
+                                <action selector="shareButtonPressed:" destination="Bs0-UH-R8z" id="cjd-Rb-lox"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="nJ0-5a-qzG" id="vLP-E5-YCi"/>
+                        <segue destination="YkD-60-CvC" kind="show" identifier="FullDetailViewController" id="5ot-Fv-Ut0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M5A-0t-Lso" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2229.5999999999999" y="169.56521739130437"/>
+        </scene>
+        <!--Detail-->
+        <scene sceneID="pUb-pc-Rhb">
+            <objects>
+                <viewController autoresizesArchivedViewToFullSize="NO" title="Detail" id="YkD-60-CvC" customClass="FullDetailViewController" customModule="Guppy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fhb-hl-IhL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eqt-5W-3UW">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" placeholder="Search" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jeh-Po-o99">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <scopeButtonTitles>
+                                            <string>Title</string>
+                                            <string>Title</string>
+                                        </scopeButtonTitles>
+                                    </searchBar>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUB-QM-uSb">
+                                        <rect key="frame" x="0.0" y="56" width="375" height="542"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="27"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" alpha="0.050000000000000003" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Guppy" translatesAutoresizingMaskIntoConstraints="NO" id="u3i-5P-2Dd">
+                                <rect key="frame" x="128" y="463" width="118" height="96"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PWd-Qn-D2T" firstAttribute="bottom" secondItem="u3i-5P-2Dd" secondAttribute="bottom" constant="44" id="0SF-Sn-GHY"/>
+                            <constraint firstItem="eqt-5W-3UW" firstAttribute="top" secondItem="PWd-Qn-D2T" secondAttribute="top" id="87L-I5-B2X"/>
+                            <constraint firstItem="eqt-5W-3UW" firstAttribute="leading" secondItem="fhb-hl-IhL" secondAttribute="leading" id="UAA-cO-sgg"/>
+                            <constraint firstItem="PWd-Qn-D2T" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="u3i-5P-2Dd" secondAttribute="bottom" constant="44" id="jNb-sl-t0I"/>
+                            <constraint firstAttribute="trailing" secondItem="eqt-5W-3UW" secondAttribute="trailing" id="mo4-Fd-KE6"/>
+                            <constraint firstItem="PWd-Qn-D2T" firstAttribute="bottom" secondItem="eqt-5W-3UW" secondAttribute="bottom" constant="5" id="taJ-Ei-4BP"/>
+                            <constraint firstItem="u3i-5P-2Dd" firstAttribute="centerX" secondItem="fhb-hl-IhL" secondAttribute="centerX" id="vxE-4I-2DT"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PWd-Qn-D2T"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="Jeh-Po-o99" id="5tU-KE-0Fu"/>
+                        <outlet property="textView" destination="PUB-QM-uSb" id="ioy-QJ-ffH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DVX-g4-ZnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2936.8000000000002" y="169.56521739130437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Guppy" width="118" height="96"/>
+        <image name="Riverbed" width="375" height="173"/>
+    </resources>
+</document>
