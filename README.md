@@ -1,5 +1,6 @@
 ![Guppy](https://raw.githubusercontent.com/johnsonandjohnson/Guppy/master/Screenshots/Guppy.png)
 
+Do you want to know what's tedious? Debugging network requests and responses if you don't have the right tools. Guppy is a logging tool focused on HTTP requests that can be easily plugged into any iOS application. Guppy will intercept and log each network request sent from the app. You can access any Guppy log and share it with the rest of you team effortlessly.
 
 ## Usage
 
@@ -81,4 +82,4 @@ pod 'Guppy'
 
 ## License
 
-Guppy is released under the Apache 2.0 license. [See LICENSE](https://raw.githubusercontent.com/johnsonandjohnson/Guppy/master/LICENSE) for details.
+Guppy is released under the Apache 2.0 license. [See LICENSE](https://github.com/johnsonandjohnson/Guppy/blob/master/LICENSE) for details.
