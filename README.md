@@ -1,6 +1,6 @@
 ![Guppy](https://raw.githubusercontent.com/johnsonandjohnson/Guppy/master/Screenshots/Guppy.png)
 
-Do you want to know what's tedious? Debugging network requests and responses if you don't have the right tools. Guppy is a logging tool focused on HTTP requests that can be easily plugged into any iOS application. Guppy will intercept and log each network request sent from the app. You can access any Guppy log and share it with the rest of you team effortlessly.
+Do you want to know what's tedious? Debugging network requests and responses if you don't have the right tools. Guppy is a logging tool focused on HTTP requests that can be easily plugged into any iOS application. Guppy will intercept and log each network request sent from the app. You can access any Guppy log and share it with the rest of your team effortlessly.
 
 ## Usage
 

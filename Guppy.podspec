@@ -9,6 +9,7 @@ Pod::Spec.new do |s|
     'Diego Urquiza' => 'dspaces1@gmail.com',
   }
 
+  s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
   s.source        = { :git => 'https://github.com/johnsonandjohnson/guppy.git', :tag => s.version }
   s.source_files  = 'Guppy/Sources/**/*.swift'
