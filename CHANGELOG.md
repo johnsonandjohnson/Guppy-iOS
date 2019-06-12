@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ## Unreleased
 
-### Changed
+### Fixed
+
+* Resolved issue where large POST request bodies were not displayed
 
 ---
 

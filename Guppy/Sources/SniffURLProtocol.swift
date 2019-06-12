@@ -38,22 +38,20 @@ public class SniffURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTa
     
     override public init(request: URLRequest, cachedResponse: CachedURLResponse?, client: URLProtocolClient?) {
         super.init(request: request, cachedResponse: cachedResponse, client: client)
-        
-        if let httpStream = request.httpBodyStream {
-            
-            // TODO: Is there a better way to handle bufferSize? Is 4096 enough?
-            let bufferSize = 4096
-            var buffer = Array<UInt8>(repeating: 0, count: bufferSize)
-            
-            httpStream.open()
-            let bytesRead = httpStream.read(&buffer, maxLength: bufferSize)
-            let data = NSData(bytes: &buffer, length: bytesRead)
-            
-            requestData = data as Data
+
+        requestData = request.httpBody ?? request.httpBodyStream.flatMap { stream in
+            let data = NSMutableData()
+            stream.open()
+            while stream.hasBytesAvailable {
+                var buffer = Array<UInt8>(repeating: 0, count: 1024)
+                let length = stream.read(&buffer, maxLength: buffer.count)
+                data.append(buffer, length: length)
+            }
+            stream.close()
+            return data as Data
         }
     }
 
-    
     override public class func canonicalRequest(for request: URLRequest) -> URLRequest {
         return request
     }
