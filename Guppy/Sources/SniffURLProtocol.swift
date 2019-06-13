@@ -18,16 +18,15 @@
 
 import Foundation
 
-public class SniffURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTaskDelegate {
+public class SniffURLProtocol: URLProtocol {
     
     private static let key = String(describing: SniffURLProtocol.self)
     private var dataTask: URLSessionDataTask!
     
-    var session: NSURLConnection!
     var response: URLResponse?
     var responseData: Data?
     var requestData: Data?
-    
+
     override public class func canInit(with request: URLRequest) -> Bool {
         if URLProtocol.property(forKey: SniffURLProtocol.key, in: request) != nil {
             return false
@@ -60,9 +59,10 @@ public class SniffURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTa
         URLProtocol.setProperty("true", forKey: SniffURLProtocol.key, in: request as! NSMutableURLRequest)
         
         // TODO: Going to be creating a lot of URL Sessions abstract this out
-        let urlSession: URLSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
+        let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         dataTask = urlSession.dataTask(with: request)
         dataTask.resume()
+        urlSession.finishTasksAndInvalidate()
     }
     
     override public func stopLoading() {
@@ -80,6 +80,20 @@ public class SniffURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTa
         dataTask = nil
         responseData = nil
     }
+}
+
+extension SniffURLProtocol: URLSessionTaskDelegate {
+    
+    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        if let error = error {
+            client?.urlProtocol(self, didFailWithError: error)
+        } else {
+            client?.urlProtocolDidFinishLoading(self)
+        }
+    }
+}
+
+extension SniffURLProtocol: URLSessionDataDelegate {
     
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,
                            didReceive response: URLResponse,
@@ -92,20 +106,12 @@ public class SniffURLProtocol: URLProtocol, URLSessionDataDelegate, URLSessionTa
     
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, didReceive data: Data) {
         client?.urlProtocol(self, didLoad: data)
-
+        
         // If the response data is large, it may come back in multiple chunks
         if responseData == nil {
             responseData = data
         } else {
             responseData?.append(data)
-        }
-    }
-    
-    public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        if let error = error {
-            client?.urlProtocol(self, didFailWithError: error)
-        } else {
-            client?.urlProtocolDidFinishLoading(self)
         }
     }
 }

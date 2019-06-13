@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file. Guppy adher
 ### Fixed
 
 * Resolved issue where large POST request bodies were not displayed
+* Resolved memory leak of SniffURLProtocol caused by urlSession not being invalidated
 
 ---
 
