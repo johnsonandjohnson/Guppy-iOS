@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         Guppy.registerURLProtocol()
         
@@ -72,7 +72,7 @@ class SessionManager: Alamofire.SessionManager {
 ## Requirements
 
 Xcode 10.2+
-iOS 11.0+
+iOS 10.0+
 
 ## Installation
 
