@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode10.2
+
+script:
+- xcodebuild -workspace Example/Guppy.xcworkspace -scheme Example -sdk iphonesimulator build test

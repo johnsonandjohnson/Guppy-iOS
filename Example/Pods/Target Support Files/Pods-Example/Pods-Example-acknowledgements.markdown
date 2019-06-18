@@ -3,7 +3,7 @@ This application makes use of the following third party libraries:
 
 ## Guppy
 
-Copyright 2018 Johnson & Johnson
+Copyright 2019 Johnson & Johnson
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
