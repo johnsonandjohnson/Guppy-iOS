@@ -1,5 +1,5 @@
 PODS:
-  - Guppy (0.5.0)
+  - Guppy (0.5.1)
 
 DEPENDENCIES:
   - Guppy (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Guppy: 249c8d8c25679cf57d88d11ff9c1a5ac14359e5f
+  Guppy: c774ea8cf53e4bb72e6975095fcd6592797b09fa
 
 PODFILE CHECKSUM: 6c6d89e59b8fb3a1b868df0e6b0ec42086a19e04
 
