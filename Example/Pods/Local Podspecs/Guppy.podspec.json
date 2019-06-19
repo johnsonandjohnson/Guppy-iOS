@@ -1,27 +1,26 @@
 {
   "name": "Guppy",
-  "version": "0.4.0",
-  "summary": "Guppy is a friendly puppy that sniffs out all network request.",
-  "homepage": "https://sourcecode.jnj.com/projects/ASX-NAFP/repos/guppy/browse",
+  "version": "0.5.0",
+  "summary": "Guppy is a friendly fish that sniffs out all network request.",
+  "homepage": "https://github.com/johnsonandjohnson/Guppy",
   "license": {
     "type": "Apache v2.0"
   },
   "authors": {
-    "Diego Urquiza": "durquiza@its.jnj.com",
-    "Brandon Walton": "bwalton5@its.jnj.com",
-    "Stephen Hayes": "shayes20@its.jnj.com",
-    "Ryan Campanella": "rcampane@its.jnj.com"
+    "Diego Urquiza": "dspaces1@gmail.com"
   },
   "platforms": {
-    "ios": "9.3"
+    "ios": "10.0"
   },
+  "swift_versions": "5.0",
   "source": {
-    "git": "https://sourcecode.jnj.com/scm/asx-nafp/guppy.git",
-    "tag": "0.4.0"
+    "git": "https://github.com/johnsonandjohnson/guppy.git",
+    "tag": "0.5.0"
   },
   "source_files": "Guppy/Sources/**/*.swift",
   "resources": "Guppy/Sources/**/*.xcassets",
   "ios": {
     "resources": "Guppy/Sources/**/*.{storyboard,xib}"
-  }
+  },
+  "swift_version": "5.0"
 }
