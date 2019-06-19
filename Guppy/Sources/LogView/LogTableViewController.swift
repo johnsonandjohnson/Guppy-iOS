@@ -18,7 +18,7 @@
 
 class LogTableViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
     var logItems: [LogItem] = [] {
         didSet {
@@ -65,11 +65,11 @@ class LogTableViewController: UIViewController {
         tableView.register(SessionLogItemTableViewCell.self)
     }
     
-    @IBAction func removeLogs() {
+    @IBAction private func removeLogs() {
         Guppy.shared.removeAllLogs()
     }
 
-    @IBAction func closePressed() {
+    @IBAction private func closePressed() {
         dismiss(animated: true, completion: nil)
     }
 

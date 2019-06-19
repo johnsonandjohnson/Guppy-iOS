@@ -16,7 +16,7 @@
 //  limitations under the License.
 //
 
-protocol NibLoadableView: class {
+protocol NibLoadableView: AnyObject {
     
     static var nibName: String { get }
 }

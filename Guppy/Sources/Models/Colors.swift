@@ -20,16 +20,16 @@ struct Colors {
     
     struct Cell {
         
-        static let backgroundBlue = UIColor(red: 1.0 / 255.0, green: 95.0 / 255.0, blue: 164.0 / 255.0, alpha: 1.0)
+        static let backgroundBlue = #colorLiteral(red: 0.003921568627, green: 0.3725490196, blue: 0.6431372549, alpha: 1)
     }
 
     struct Status {
         
-        static let darkGreen = UIColor(red: 0.0 / 255.0, green: 100.0 / 255.0, blue: 0.0 / 255.0, alpha: 1.0)
+        static let darkGreen = #colorLiteral(red: 0, green: 0.3921568627, blue: 0, alpha: 1)
     }
     
     struct NavigationBar {
         
-        static let lightBlue = UIColor(red: 3.0 / 255.0, green: 144.0 / 255.0 , blue: 218.0 / 255.0, alpha: 1.0)
+        static let lightBlue = #colorLiteral(red: 0.01176470588, green: 0.5647058824, blue: 0.8549019608, alpha: 1)
     }
 }

@@ -18,7 +18,7 @@
 
 class LogDetailTableViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView!
     
     var selectedRow: Row!
     var filteredSections: [CollapsibleSection<Row>] = []
@@ -76,7 +76,7 @@ class LogDetailTableViewController: UIViewController {
         }
     }
     
-    @IBAction func shareButtonPressed(_ sender: Any) {
+    @IBAction private func shareButtonPressed(_ sender: Any) {
         shareText(collapsibleSections.prettyPrint())
     }
 }

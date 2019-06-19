@@ -20,7 +20,7 @@ import UIKit
 
 class LogDetailTableViewCell: UITableViewCell, NibLoadableView {
 
-    @IBOutlet weak var title: UILabel!
+    @IBOutlet private var title: UILabel!
     
     func setUp(with title: String) {
         self.title.attributedText = nil
