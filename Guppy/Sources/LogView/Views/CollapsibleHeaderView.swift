@@ -16,15 +16,15 @@
 //  limitations under the License.
 //
 
-protocol CollapsibleHeaderDelegate: class {
+protocol CollapsibleHeaderDelegate: AnyObject {
     
     func toggleSection(at index: Int)
 }
 
 class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
 
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var arrowView: ArrowView!
+    @IBOutlet private var title: UILabel!
+    @IBOutlet private var arrowView: ArrowView!
     
     let collapsedAngle = CGFloat(Double.pi * 270.0 / 180.0)
     let uncollapsedAngle = CGFloat(0)
@@ -50,7 +50,7 @@ class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
     }
     
     @objc func tappedTitle() {
-        isCollapsed = !isCollapsed
+        isCollapsed.toggle()
         updateChevron(isCollapsed: isCollapsed)
         
         delegate?.toggleSection(at: index)

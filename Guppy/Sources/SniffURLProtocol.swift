@@ -42,7 +42,7 @@ public class SniffURLProtocol: URLProtocol {
             let data = NSMutableData()
             stream.open()
             while stream.hasBytesAvailable {
-                var buffer = Array<UInt8>(repeating: 0, count: 1024)
+                var buffer = [UInt8](repeating: 0, count: 1024)
                 let length = stream.read(&buffer, maxLength: buffer.count)
                 data.append(buffer, length: length)
             }

@@ -1,0 +1,60 @@
+file_length:
+  - 400
+function_parameter_count:
+  - 6
+type_body_length:
+  - 400
+
+disabled_rules:
+  - force_cast
+  - force_try
+  - function_body_length
+  - identifier_name
+  - line_length
+  - nesting
+  - todo
+  - trailing_whitespace
+  - type_name
+
+opt_in_rules:
+  - closure_end_indentation
+  - closure_spacing
+  - conditional_returns_on_newline
+  - contains_over_first_not_nil
+  - empty_count
+  - empty_string
+  - explicit_init
+  - fatal_error_message
+  - first_where
+  - let_var_whitespace
+  - object_literal
+  - operator_usage_whitespace
+  - overridden_super_call
+  - private_action
+  - private_outlet
+  - prohibited_super_call
+  - redundant_nil_coalescing
+  - redundant_type_annotation
+  - trailing_closure
+  - unneeded_parentheses_in_closure_argument
+  - anyobject_protocol
+  - identical_operands
+  - toggle_bool
+  - closure_body_length
+  - legacy_random
+  - multiline_literal_brackets
+  - xct_specific_matcher
+  - last_where
+  - strong_iboutlet
+
+custom_rules:
+    comments_space:
+        name: "Space After Comment"
+        regex: '(^ *//\w+)'
+        message: "There should be a space after //"
+        severity: warning
+    empty_first_line:
+        name: "Empty First Line"
+        regex: '(^[ a-zA-Z ]*(?:protocol|extension|class|struct) (?!(?:var|let))[ a-zA-Z:]*\{\n *\S+)'
+        message: "There should be an empty line after a declaration"
+        severity: warning

@@ -21,10 +21,10 @@ import Guppy
 
 class ViewController: UIViewController {
     
-    @IBAction func getRequestPressed() {
+    @IBAction private func getRequestPressed() {
         let url = URL(string: "http://api.github.com/users")!
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        URLSession.shared.dataTask(with: url) { _, response, error in
             if let error = error {
                 print(error)
             } else {
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
         }.resume()
     }
     
-    @IBAction func postRequestPressed() {
+    @IBAction private func postRequestPressed() {
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts")!
         
         var urlRequest = URLRequest(url: url)
@@ -44,7 +44,7 @@ class ViewController: UIViewController {
         
         urlRequest.httpBody = jsonData
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { _, response, error in
             if let error = error {
                 print(error)
             } else {
@@ -53,7 +53,7 @@ class ViewController: UIViewController {
         }.resume()
     }
     
-    @IBAction func putRequestPressed() {
+    @IBAction private func putRequestPressed() {
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1")!
         
         var urlRequest = URLRequest(url: url)
@@ -64,16 +64,16 @@ class ViewController: UIViewController {
         
         urlRequest.httpBody = jsonData
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { _, response, error in
             if let error = error {
                 print(error)
             } else {
                 print(response!)
             }
-            }.resume()
+        }.resume()
     }
     
-    @IBAction func deleteRequestPressed() {
+    @IBAction private func deleteRequestPressed() {
         let url = URL(string: "https://jsonplaceholder.typicode.com/posts/1")!
         
         var urlRequest = URLRequest(url: url)
@@ -84,22 +84,20 @@ class ViewController: UIViewController {
         
         urlRequest.httpBody = jsonData
         
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) { _, response, error in
             if let error = error {
                 print(error)
             } else {
                 print(response!)
             }
-            }.resume()
+        }.resume()
     }
     
-    @IBAction func showOnShakeToggled(_ sender: UISwitch) {
+    @IBAction private func showOnShakeToggled(_ sender: UISwitch) {
         Guppy.shared.showOnShake = sender.isOn
     }
     
-    @IBAction func openGuppy() {
+    @IBAction private func openGuppy() {
         Guppy.shared.presentLogViewController()
     }
-    
 }
-

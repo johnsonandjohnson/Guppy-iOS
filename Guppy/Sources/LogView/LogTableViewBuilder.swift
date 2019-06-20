@@ -33,7 +33,7 @@ class LogTableViewBuilder {
             }
         }
         
-        let updatedDomainSections = domainSectionMap.map { (title, itemArray) -> CollapsibleSection<LogItem> in
+        let updatedDomainSections = domainSectionMap.map { title, itemArray -> CollapsibleSection<LogItem> in
             if let sectionIndex = domainSections.firstIndex(where: { $0.title == title }) {
                 return CollapsibleSection(title: title, rows: itemArray, isCollapsed: domainSections[sectionIndex].isCollapsed)
             } else {
@@ -82,7 +82,7 @@ class LogTableViewBuilder {
         }
         
         // Response Header
-        if let httpResponse = session.response as? HTTPURLResponse, let headerFields = httpResponse.allHeaderFields as? Dictionary<String, String>{
+        if let httpResponse = session.response as? HTTPURLResponse, let headerFields = httpResponse.allHeaderFields as? [String: String] {
             
             let row = Row(title: "\(headerFields)".removeBackslashes())
             

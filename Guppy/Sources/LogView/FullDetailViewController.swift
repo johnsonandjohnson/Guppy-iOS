@@ -20,8 +20,8 @@ import UIKit
 
 class FullDetailViewController: UIViewController {
 
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet private var searchBar: UISearchBar!
+    @IBOutlet private var textView: UITextView!
     
     var text: String!
     var searchText: String?

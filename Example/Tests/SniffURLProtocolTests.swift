@@ -24,14 +24,16 @@ class Tests: XCTestCase {
     
     var jsonURL: URL {
         let bundle = Bundle(for: Tests.self)
-        return bundle.url(forResource: "AtomicElements", withExtension:"json")!
+        return bundle.url(forResource: "AtomicElements", withExtension: "json")!
     }
     
     override func setUp() {
+        super.setUp()
         Guppy.registerURLProtocol()
     }
     
     override func tearDown() {
+        super.tearDown()
         Guppy.shared.removeAllLogs()
     }
     

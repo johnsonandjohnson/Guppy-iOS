@@ -18,10 +18,10 @@
 
 class SessionLogItemTableViewCell: UITableViewCell, NibLoadableView {
 
-    @IBOutlet weak var typeLabel: UILabel!
-    @IBOutlet weak var timelabel: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
-    @IBOutlet weak var domainLabel: UILabel!
+    @IBOutlet private var typeLabel: UILabel!
+    @IBOutlet private var timelabel: UILabel!
+    @IBOutlet private var statusLabel: UILabel!
+    @IBOutlet private var domainLabel: UILabel!
     
     func setUp(_ logItem: LogItem & Session) {
         typeLabel.text = logItem.request.httpMethod ?? "Unknown"
