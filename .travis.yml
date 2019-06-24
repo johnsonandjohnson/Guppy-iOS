@@ -2,8 +2,11 @@ language: swift
 osx_image: xcode10.2
 
 install:
-- brew install swiftlint
+  - brew install swiftlint
 
 script:
-- xcodebuild -workspace Example/Guppy.xcworkspace -scheme Example -sdk iphonesimulator build test
-- swiftlint --strict
+  - xcodebuild -workspace Example/Guppy.xcworkspace -scheme Example -sdk iphonesimulator build test
+  - swiftlint --strict
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
