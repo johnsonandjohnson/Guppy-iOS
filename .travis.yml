@@ -5,7 +5,7 @@ install:
   - brew install swiftlint
 
 script:
-  - xcodebuild -workspace Example/Guppy.xcworkspace -scheme Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest' build test
+  - xcodebuild -scheme Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 8,OS=latest' build test
   - swiftlint --strict
 
 after_success:
