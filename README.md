@@ -2,7 +2,8 @@
 
 [![Platform](https://img.shields.io/badge/platform-iOS-green.svg?style=flat)](https://img.shields.io/badge/platform-iOS-blue.svg?style=flat)
 [![Swift Version](https://img.shields.io/badge/Swift-5.0+-F16D39.svg?style=flat)](https://developer.apple.com/swift)
-[![CocoaPods](https://img.shields.io/cocoapods/v/Guppy.svg?style=flat)](https://cocoapods.org/pods/Guppy) 
+[![CocoaPods](https://img.shields.io/cocoapods/v/Guppy.svg?style=flat)](https://cocoapods.org/pods/Guppy)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![codecov](https://codecov.io/gh/johnsonandjohnson/Guppy/branch/master/graph/badge.svg)](https://codecov.io/gh/johnsonandjohnson/Guppy)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
@@ -82,10 +83,18 @@ iOS 10.0+
 
 ## Installation
 
+### [CocoaPods](https://cocoapods.org)
+
 ```ruby
 pod 'Guppy'
 ```
 
+### [Carthage](https://github.com/Carthage/Carthage)
+
+```
+github "johnsonandjohnson/Guppy"
+```
+
 ## License
 
-Guppy is released under the Apache 2.0 license. [See LICENSE](https://github.com/johnsonandjohnson/Guppy/blob/master/LICENSE) for details.
+Guppy is released under the Apache 2.0 license. See [LICENSE](https://github.com/johnsonandjohnson/Guppy/blob/master/LICENSE) for details.
