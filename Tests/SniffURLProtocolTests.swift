@@ -16,24 +16,26 @@
 //  limitations under the License.
 //
 
-import UIKit
 import XCTest
-import Guppy
+@testable import Guppy
 
-class Tests: XCTestCase {
+class SniffURLProtocolTests: XCTestCase {
     
     var jsonURL: URL {
-        let bundle = Bundle(for: Tests.self)
+        let bundle = Bundle(for: SniffURLProtocolTests.self)
         return bundle.url(forResource: "AtomicElements", withExtension: "json")!
     }
     
     override func setUp() {
         super.setUp()
+
         Guppy.registerURLProtocol()
+        Guppy.shared.removeAllLogs()
     }
     
     override func tearDown() {
         super.tearDown()
+
         Guppy.shared.removeAllLogs()
     }
     
@@ -55,6 +57,6 @@ class Tests: XCTestCase {
             }
         }.resume()
 
-        waitForExpectations(timeout: 1000)
+        waitForExpectations(timeout: 10)
     }
 }
