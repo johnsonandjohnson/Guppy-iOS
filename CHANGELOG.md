@@ -7,6 +7,12 @@ All notable changes to this project will be documented in this file. Guppy adher
 #### Changed
 
 * Changed to use systemFont for display
+* Renamed `SniffURLProtocol` to `GuppyURLProtocol`
+* Deprecated `getSniffURLProtocol()`
+
+#### Fixed
+
+* Fixed issue where `motionBegan` was intercepted and did not call super
 
 ---
 

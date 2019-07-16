@@ -51,7 +51,10 @@ class Session: URLSession {
         let configuration = URLSessionConfiguration.default
         
         configuration.urlCache = nil
-        configuration.protocolClasses = [MyCustomProtocol, Guppy.getSniffURLProtocol()]
+        
+        // Protocols are evaluated in reverse order
+        // If GuppyURLProtocol is not the last protocol it is not guaranteed to be executed
+        configuration.protocolClasses = [MyCustomProtocol, GuppyURLProtocol.self]
         
         super.init(configuration: configuration)
     }
@@ -68,7 +71,7 @@ class SessionManager: Alamofire.SessionManager {
         let configuration = URLSessionConfiguration.default
 
         configuration.urlCache = nil
-        configuration.protocolClasses = [Guppy.getSniffURLProtocol()]
+        configuration.protocolClasses = [GuppyURLProtocol.self]
         
         super.init(configuration: configuration)
     }

@@ -1,5 +1,5 @@
 //
-//  SniffURLProtocol.swift
+//  GuppyURLProtocol.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -18,9 +18,9 @@
 
 import Foundation
 
-public class SniffURLProtocol: URLProtocol {
+public class GuppyURLProtocol: URLProtocol {
     
-    private static let key = String(describing: SniffURLProtocol.self)
+    private static let key = String(describing: GuppyURLProtocol.self)
     private var dataTask: URLSessionDataTask!
     
     var response: URLResponse?
@@ -28,7 +28,7 @@ public class SniffURLProtocol: URLProtocol {
     var requestData: Data?
 
     override public class func canInit(with request: URLRequest) -> Bool {
-        if URLProtocol.property(forKey: SniffURLProtocol.key, in: request) != nil {
+        if URLProtocol.property(forKey: GuppyURLProtocol.key, in: request) != nil {
             return false
         }
         
@@ -56,7 +56,7 @@ public class SniffURLProtocol: URLProtocol {
     }
     
     override public func startLoading() {
-        URLProtocol.setProperty("true", forKey: SniffURLProtocol.key, in: request as! NSMutableURLRequest)
+        URLProtocol.setProperty("true", forKey: GuppyURLProtocol.key, in: request as! NSMutableURLRequest)
         
         // TODO: Going to be creating a lot of URL Sessions abstract this out
         let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
@@ -82,7 +82,7 @@ public class SniffURLProtocol: URLProtocol {
     }
 }
 
-extension SniffURLProtocol: URLSessionTaskDelegate {
+extension GuppyURLProtocol: URLSessionTaskDelegate {
     
     public func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         if let error = error {
@@ -93,7 +93,7 @@ extension SniffURLProtocol: URLSessionTaskDelegate {
     }
 }
 
-extension SniffURLProtocol: URLSessionDataDelegate {
+extension GuppyURLProtocol: URLSessionDataDelegate {
     
     public func urlSession(_ session: URLSession, dataTask: URLSessionDataTask,
                            didReceive response: URLResponse,

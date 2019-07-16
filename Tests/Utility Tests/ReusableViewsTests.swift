@@ -1,5 +1,5 @@
 //
-//  ReusableViewsCellsTests.swift
+//  ReusableViewsTests.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -19,7 +19,7 @@
 import XCTest
 @testable import Guppy
 
-class ReusableViewsCellsTests: XCTestCase {
+class ReusableViewsTests: XCTestCase {
 
     func testDefaultReuseIdentifier() {
         XCTAssertEqual(LogDetailTableViewCell.defaultReuseIdentifier, "Guppy.\(String(describing: LogDetailTableViewCell.self))")

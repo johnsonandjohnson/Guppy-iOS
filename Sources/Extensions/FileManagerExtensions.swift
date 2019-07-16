@@ -1,5 +1,5 @@
 //
-//  ReuseableViews+Cells.swift
+//  FileManagerExtensions.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -16,20 +16,21 @@
 //  limitations under the License.
 //
 
-import UIKit
+import Foundation
 
-protocol ReusableView: AnyObject {
+extension FileManager {
     
-    static var defaultReuseIdentifier: String { get }
-}
-
-extension ReusableView where Self: UIView {
+    static let guppyDir = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("Guppy", isDirectory: true)
     
-    static var defaultReuseIdentifier: String {
-        return NSStringFromClass(self)
+    func createGuppyFolder() {
+        do {
+            try FileManager.default.createDirectory(at: FileManager.guppyDir, withIntermediateDirectories: true, attributes: nil)
+        } catch {
+            assertionFailure("Could not create Guppy folder")
+        }
+    }
+    
+    func clearGuppyLog() {
+        try? FileManager.default.removeItem(at: FileManager.guppyDir)
     }
 }
-
-extension UITableViewCell: ReusableView { }
-
-extension UITableViewHeaderFooterView: ReusableView { }

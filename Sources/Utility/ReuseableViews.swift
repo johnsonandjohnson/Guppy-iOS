@@ -1,5 +1,5 @@
 //
-//  UIWindow+Motion.swift
+//  ReuseableViews.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -16,11 +16,20 @@
 //  limitations under the License.
 //
 
-extension UIWindow {
+import UIKit
+
+protocol ReusableView: AnyObject {
     
-    override open func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-        if Guppy.shared.showOnShake {
-            Guppy.shared.presentLogViewController()
-        }
+    static var defaultReuseIdentifier: String { get }
+}
+
+extension ReusableView where Self: UIView {
+    
+    static var defaultReuseIdentifier: String {
+        return NSStringFromClass(self)
     }
 }
+
+extension UITableViewCell: ReusableView { }
+
+extension UITableViewHeaderFooterView: ReusableView { }

@@ -1,5 +1,5 @@
 //
-//  String+Extensions.swift
+//  StringExtensions.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //

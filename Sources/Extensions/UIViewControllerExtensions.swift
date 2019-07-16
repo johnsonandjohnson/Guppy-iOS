@@ -1,5 +1,5 @@
 //
-//  FileManager+TempFolder.swift
+//  UIViewControllerExtensions.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -16,21 +16,16 @@
 //  limitations under the License.
 //
 
-import Foundation
-
-extension FileManager {
+extension UIViewController {
     
-    static let guppyDir = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("Guppy", isDirectory: true)
-    
-    func createGuppyFolder() {
-        do {
-            try FileManager.default.createDirectory(at: FileManager.guppyDir, withIntermediateDirectories: true, attributes: nil)
-        } catch {
-            assertionFailure("Could not create Guppy folder")
-        }
-    }
-    
-    func clearGuppyLog() {
-        try? FileManager.default.removeItem(at: FileManager.guppyDir)
+    /// Instantiates view controller from Pod bundle. The view controller that is being instantiated **must** have the same name as its storyboard ID.
+    static func instantiateFromStoryboard<T: UIViewController>() -> T {
+        
+        let viewControllerName = String(describing: T.self)
+        let storyboard = UIStoryboard(name: viewControllerName, bundle: Bundle(for: self))
+        
+        let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as! T
+        
+        return viewController
     }
 }

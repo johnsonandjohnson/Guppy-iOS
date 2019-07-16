@@ -33,22 +33,22 @@ class GuppyTests: XCTestCase {
         Guppy.shared.removeAllLogs()
     }
 
-    func testGetSniffURLProtocol() {
+    func testGuppyURLProtocol() {
         let configWithoutGuppy = URLSessionConfiguration.default
         let noGuppySession = URLSession(configuration: configWithoutGuppy)
 
         if let protocolClasses = noGuppySession.configuration.protocolClasses {
-            XCTAssertFalse(protocolClasses.contains { $0 is SniffURLProtocol.Type })
+            XCTAssertFalse(protocolClasses.contains { $0 is GuppyURLProtocol.Type })
         } else {
             XCTFail("Unable to find protocol classes")
         }
 
         let configWithGuppy = URLSessionConfiguration.default
-        configWithGuppy.protocolClasses = [Guppy.getSniffURLProtocol()]
+        configWithGuppy.protocolClasses = [GuppyURLProtocol.self]
 
         let gupppySession = URLSession(configuration: configWithGuppy)
         if let protocolClasses = gupppySession.configuration.protocolClasses {
-            XCTAssertTrue(protocolClasses.contains { $0 is SniffURLProtocol.Type })
+            XCTAssertTrue(protocolClasses.contains { $0 is GuppyURLProtocol.Type })
         } else {
             XCTFail("Unable to find protocol classes")
         }
