@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ## Unreleased
 
+#### Changed
+
+* Changed to use systemFont for display
+
 ---
 
 ## Releases
