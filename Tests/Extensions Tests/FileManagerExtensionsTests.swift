@@ -1,5 +1,5 @@
 //
-//  FileManagerTempFolderTests.swift
+//  FileManagerExtensionsTests.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -19,7 +19,7 @@
 import XCTest
 @testable import Guppy
 
-class FileManagerTempFolderTests: XCTestCase {
+class FileManagerExtensionsTests: XCTestCase {
 
     override func setUp() {
         super.setUp()

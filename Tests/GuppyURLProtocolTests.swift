@@ -1,5 +1,5 @@
 //
-//  SniffURLProtocolTests.swift
+//  GuppyURLProtocolTests.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -19,10 +19,10 @@
 import XCTest
 @testable import Guppy
 
-class SniffURLProtocolTests: XCTestCase {
+class GuppyURLProtocolTests: XCTestCase {
     
     var jsonURL: URL {
-        let bundle = Bundle(for: SniffURLProtocolTests.self)
+        let bundle = Bundle(for: GuppyURLProtocolTests.self)
         return bundle.url(forResource: "AtomicElements", withExtension: "json")!
     }
     
@@ -45,7 +45,7 @@ class SniffURLProtocolTests: XCTestCase {
         let e = expectation(description: "myExpectation")
         
         URLSession.shared.dataTask(with: jsonURL) { _, _, error in
-            // TODO: SniffURLProtocol does not have a way to intercept data before calling completion on a dataTask. Need to a small delay here as a temp fix to help race condition between writting the new data to Guppy and reading it.
+            // TODO: GuppyURLProtocol does not have a way to intercept data before calling completion on a dataTask. Need to a small delay here as a temp fix to help race condition between writting the new data to Guppy and reading it.
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 if let error = error {
                     XCTFail(error.localizedDescription)

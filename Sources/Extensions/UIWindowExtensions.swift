@@ -1,5 +1,5 @@
 //
-//  UIViewController+Storyboard.swift
+//  UIWindowExtensions.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
@@ -16,16 +16,13 @@
 //  limitations under the License.
 //
 
-extension UIViewController {
+extension UIWindow {
     
-    /// Instantiates view controller from Pod bundle. The view controller that is being instantiated **must** have the same name as its storyboard ID.
-    static func instantiateFromStoryboard<T: UIViewController>() -> T {
-        
-        let viewControllerName = String(describing: T.self)
-        let storyboard = UIStoryboard(name: viewControllerName, bundle: Bundle(for: self))
-        
-        let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as! T
-        
-        return viewController
+    override open func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
+        super.motionBegan(motion, with: event)
+
+        if Guppy.shared.showOnShake {
+            Guppy.shared.presentLogViewController()
+        }
     }
 }

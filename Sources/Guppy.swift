@@ -24,16 +24,17 @@ public class Guppy {
     
     public static let shared = Guppy()
 
-    /// Registers custom URLProtocol. If you are you using a custom URLSession use **getSniffURLProtocol()** and add it to your URLSessionConfiguration's protocolClasses
+    /// Registers custom URLProtocol. If you are you using a custom URLSession add **GuppyURLProtocol.self** to your URLSessionConfiguration's protocolClasses
     public static func registerURLProtocol() {
-        URLProtocol.registerClass(SniffURLProtocol.self)
+        URLProtocol.registerClass(GuppyURLProtocol.self)
     }
 
     /// Using configuration.protocolClasses.append(getSniffURLProtocol().self) might not work if you have a URLProtocol already in the protocolClass array. It is recommend to create a new AnyClass array and set it to protocolClasses.
     ///
     /// - Returns: Custom url protocol as AnyClass and can be added to a URLSessionConfiguration's protocol classes.
+    @available(*, deprecated, message: "Please use `GuppyURLProtocol.self` directly")
     public static func getSniffURLProtocol() -> AnyClass {
-        return SniffURLProtocol.self
+        return GuppyURLProtocol.self
     }
 
     public func getAllLogs() -> [LogItem] {

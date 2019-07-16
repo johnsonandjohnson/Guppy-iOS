@@ -1,5 +1,5 @@
 //
-//  UITableView+NibRegister.swift
+//  UITableViewExtensions.swift
 //
 //  Copyright © 2019 Johnson & Johnson
 //
