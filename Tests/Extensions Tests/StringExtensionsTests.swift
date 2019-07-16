@@ -21,7 +21,7 @@ import XCTest
 
 class StringExtensionsTests: XCTestCase {
 
-    private let font = UIFont(name: "HelveticaNeue", size: 17.0)
+    private let font = UIFont.systemFont(ofSize: 17)
 
     func testHighlight() {
         let startString = "This is a "
