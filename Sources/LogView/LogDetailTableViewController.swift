@@ -68,11 +68,10 @@ class LogDetailTableViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == String(describing: FullDetailViewController.self) {
-            if let fullDetailTableViewController = segue.destination as? FullDetailViewController {
-                fullDetailTableViewController.text = selectedRow?.title
-                fullDetailTableViewController.searchText = searchController.searchBar.text
-            }
+        if segue.identifier == String(describing: FullDetailViewController.self),
+            let fullDetailTableViewController = segue.destination as? FullDetailViewController {
+            fullDetailTableViewController.text = selectedRow?.title
+            fullDetailTableViewController.searchText = searchController.searchBar.text
         }
     }
     
@@ -87,7 +86,7 @@ extension LogDetailTableViewController {
     fileprivate func shareText(_ sharedText: String) {
         let activityVC = UIActivityViewController(activityItems: [AirDropTextDataSource(with: sharedText)], applicationActivities: nil)
         activityVC.popoverPresentationController?.sourceView = tableView
-        self.present(activityVC, animated: true, completion: nil)
+        present(activityVC, animated: true)
     }
 }
 
@@ -110,9 +109,7 @@ extension LogDetailTableViewController: UITableViewDataSource {
         let row = tableSections[indexPath.section].rows[indexPath.row]
         
         if isFiltering() {
-            if let searchText = searchController.searchBar.text {
-                cell.setUp(withAttributed: row.title.highlight(searchText: searchText))
-            }
+            cell.setUp(with: row.title.highlight(searchText: searchController.searchBar.text ?? ""))
         } else {
             cell.setUp(with: row.title)
         }
@@ -159,7 +156,7 @@ extension LogDetailTableViewController: UISearchResultsUpdating {
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else {
-            assertionFailure("SearchBar not unwrapped")
+            assertionFailure("Unable to get search bar text")
             return
         }
         

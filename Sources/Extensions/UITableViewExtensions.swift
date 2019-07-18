@@ -43,7 +43,7 @@ extension UITableView {
     
     func dequeueReusableCell<T: UITableViewHeaderFooterView>() -> T {
         guard let cell = dequeueReusableHeaderFooterView(withIdentifier: T.defaultReuseIdentifier) as? T else {
-            fatalError("Could not dequeue cell with id: \(T.defaultReuseIdentifier)")
+            fatalError("Could not dequeue header footer view with id: \(T.defaultReuseIdentifier)")
         }
         return cell
     }

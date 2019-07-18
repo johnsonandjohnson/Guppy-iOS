@@ -34,7 +34,7 @@ extension Sequence where Iterator.Element == CollapsibleSection<Row> {
     func prettyPrint() -> String {
         var text = ""
         for section in self {
-            text += "--\(section.title )--\n"
+            text += "--\(section.title)--\n"
             
             for row in section.rows {
                 text += "\(row.title)\n"
