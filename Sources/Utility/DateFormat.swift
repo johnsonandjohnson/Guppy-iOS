@@ -37,8 +37,4 @@ struct DateFormat {
         formatter.timeStyle = time
         formatter.dateStyle = date
     }
-    
-    func setFormatString(_ formatString: String) {
-        formatter.dateFormat = formatString
-    }
 }

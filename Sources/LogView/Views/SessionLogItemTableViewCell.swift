@@ -19,13 +19,13 @@
 class SessionLogItemTableViewCell: UITableViewCell, NibLoadableView {
 
     @IBOutlet private var typeLabel: UILabel!
-    @IBOutlet private var timelabel: UILabel!
+    @IBOutlet private var timeLabel: UILabel!
     @IBOutlet private var statusLabel: UILabel!
     @IBOutlet private var domainLabel: UILabel!
     
     func setUp(_ logItem: LogItem & Session) {
         typeLabel.text = logItem.request.httpMethod ?? "Unknown"
-        timelabel.text = DateFormat.shared.formatter.string(from: logItem.date)
+        timeLabel.text = DateFormat.shared.formatter.string(from: logItem.date)
         
         let pathURL = URLComponents(string: logItem.domain)?.path ?? logItem.domain
         domainLabel.text = pathURL

@@ -23,11 +23,11 @@ protocol CollapsibleHeaderDelegate: AnyObject {
 
 class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
 
-    @IBOutlet private var title: UILabel!
+    @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var arrowView: ArrowView!
     
-    let collapsedAngle = CGFloat(Double.pi * 270.0 / 180.0)
-    let uncollapsedAngle = CGFloat(0)
+    let collapsedAngle = CGFloat.pi * 3 / 2
+    let uncollapsedAngle = CGFloat.zero
     
     weak var delegate: CollapsibleHeaderDelegate?
     var isCollapsed: Bool!
@@ -41,7 +41,7 @@ class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
     }
     
     func setUp(with title: String, at index: Int, isCollapsed: Bool, backgroundColor: UIColor = Colors.Cell.backgroundBlue) {
-        self.title.text = title
+        titleLabel.text = title
         self.isCollapsed = isCollapsed
         self.index = index
         

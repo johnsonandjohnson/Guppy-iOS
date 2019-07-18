@@ -20,14 +20,13 @@ import UIKit
 
 class LogDetailTableViewCell: UITableViewCell, NibLoadableView {
 
-    @IBOutlet private var title: UILabel!
+    @IBOutlet private var titleLabel: UILabel!
     
     func setUp(with title: String) {
-        self.title.attributedText = nil
-        self.title.text = title
+        titleLabel.text = title
     }
     
-    func setUp(withAttributed title: NSAttributedString) {
-        self.title.attributedText = title
+    func setUp(with title: NSAttributedString) {
+        titleLabel.attributedText = title
     }
 }

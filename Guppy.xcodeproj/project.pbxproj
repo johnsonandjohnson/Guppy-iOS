@@ -51,7 +51,7 @@
 		4D85807722D7B25C0048C446 /* Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805722D7B25C0048C446 /* Row.swift */; };
 		4D85807822D7B25C0048C446 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805822D7B25C0048C446 /* Colors.swift */; };
 		4D85807922D7B25C0048C446 /* LogItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805922D7B25C0048C446 /* LogItem.swift */; };
-		4D85807A22D7B25C0048C446 /* SniffURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805A22D7B25C0048C446 /* SniffURLProtocol.swift */; };
+		4D85807A22D7B25C0048C446 /* GuppyURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805A22D7B25C0048C446 /* GuppyURLProtocol.swift */; };
 		4D85807B22D7B25C0048C446 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805C22D7B25C0048C446 /* UIViewControllerExtensions.swift */; };
 		4D85807C22D7B25C0048C446 /* UIWindowExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805D22D7B25C0048C446 /* UIWindowExtensions.swift */; };
 		4D85807D22D7B25C0048C446 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D85805E22D7B25C0048C446 /* StringExtensions.swift */; };
@@ -142,7 +142,7 @@
 		4D85805722D7B25C0048C446 /* Row.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Row.swift; sourceTree = "<group>"; };
 		4D85805822D7B25C0048C446 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		4D85805922D7B25C0048C446 /* LogItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogItem.swift; sourceTree = "<group>"; };
-		4D85805A22D7B25C0048C446 /* SniffURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SniffURLProtocol.swift; sourceTree = "<group>"; };
+		4D85805A22D7B25C0048C446 /* GuppyURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuppyURLProtocol.swift; sourceTree = "<group>"; };
 		4D85805C22D7B25C0048C446 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
 		4D85805D22D7B25C0048C446 /* UIWindowExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIWindowExtensions.swift; sourceTree = "<group>"; };
 		4D85805E22D7B25C0048C446 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -250,7 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				4D85805122D7B25C0048C446 /* Guppy.swift */,
-				4D85805A22D7B25C0048C446 /* SniffURLProtocol.swift */,
+				4D85805A22D7B25C0048C446 /* GuppyURLProtocol.swift */,
 				4D85805B22D7B25C0048C446 /* Extensions */,
 				4D85804122D7B25C0048C446 /* LogView */,
 				4D85805222D7B25C0048C446 /* Models */,
@@ -571,7 +571,7 @@
 				4D85808122D7B25C0048C446 /* UITableViewExtensions.swift in Sources */,
 				4D85807722D7B25C0048C446 /* Row.swift in Sources */,
 				4D85807E22D7B25C0048C446 /* NibLoadableView.swift in Sources */,
-				4D85807A22D7B25C0048C446 /* SniffURLProtocol.swift in Sources */,
+				4D85807A22D7B25C0048C446 /* GuppyURLProtocol.swift in Sources */,
 				4D85807022D7B25C0048C446 /* SessionLogItemTableViewCell.swift in Sources */,
 				4D85806322D7B25C0048C446 /* DateFormat.swift in Sources */,
 				4D85807C22D7B25C0048C446 /* UIWindowExtensions.swift in Sources */,

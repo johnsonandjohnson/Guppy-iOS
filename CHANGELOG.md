@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file. Guppy adher
 #### Fixed
 
 * Fixed issue where `motionBegan` was intercepted and did not call super
+* Fixed issue where json decoding used ascii encoding instead of utf8
 
 ---
 

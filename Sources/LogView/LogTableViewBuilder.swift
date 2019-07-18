@@ -19,21 +19,10 @@
 class LogTableViewBuilder {
     
     static func getDomainSections(from logItems: [LogItem], in domainSections: [CollapsibleSection<LogItem>] = []) -> [CollapsibleSection<LogItem>] {
-        let sortedLogItems = logItems.sorted { $0.date > $1.date }
-        
-        var domainSectionMap: [String: [LogItem]] = [:]
-        
-        for logItem in sortedLogItems {
-            let domainString = URL(string: logItem.domain)?.host ?? logItem.domain
-            
-            if domainSectionMap[domainString] != nil {
-                domainSectionMap[domainString]?.append(logItem)
-            } else {
-                domainSectionMap[domainString] = [logItem]
-            }
-        }
-        
-        let updatedDomainSections = domainSectionMap.map { title, itemArray -> CollapsibleSection<LogItem> in
+        let sortedLogItems = logItems.sorted { $0.date < $1.date }
+        let domainSectionDictionary = Dictionary(grouping: sortedLogItems) { URL(string: $0.domain)?.host ?? $0.domain }
+
+        let updatedDomainSections = domainSectionDictionary.map { title, itemArray -> CollapsibleSection<LogItem> in
             if let sectionIndex = domainSections.firstIndex(where: { $0.title == title }) {
                 return CollapsibleSection(title: title, rows: itemArray, isCollapsed: domainSections[sectionIndex].isCollapsed)
             } else {
@@ -73,7 +62,7 @@ class LogTableViewBuilder {
         if let data = session.requestData,
             let jsonDictionary = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
             let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary, options: .prettyPrinted),
-            let jsonString = String(data: jsonData, encoding: .ascii) {
+            let jsonString = String(data: jsonData, encoding: .utf8) {
             
             let row = Row(title: "\(jsonString.removeBackslashes())")
             
@@ -83,7 +72,6 @@ class LogTableViewBuilder {
         
         // Response Header
         if let httpResponse = session.response as? HTTPURLResponse, let headerFields = httpResponse.allHeaderFields as? [String: String] {
-            
             let row = Row(title: "\(headerFields)".removeBackslashes())
             
             let requestHeaderSection = CollapsibleSection(title: "Response Header", rows: [row], isCollapsed: false)
@@ -94,7 +82,7 @@ class LogTableViewBuilder {
         if let data = session.responseData,
             let jsonDictionary = try? JSONSerialization.jsonObject(with: data, options: .allowFragments),
             let jsonData = try? JSONSerialization.data(withJSONObject: jsonDictionary, options: .prettyPrinted),
-            let jsonString = String(data: jsonData, encoding: .ascii) {
+            let jsonString = String(data: jsonData, encoding: .utf8) {
            
             let row = Row(title: "\(jsonString.removeBackslashes())")
             

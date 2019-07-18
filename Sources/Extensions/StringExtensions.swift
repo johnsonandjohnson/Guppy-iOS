@@ -39,17 +39,17 @@ extension String {
     
     /// Returns true if the string matches the regex
     func matches(_ regex: String) -> Bool {
-        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+        return range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
     }
     
     /// Removes the backslashes from the text
     func removeBackslashes() -> String {
-        return self.replacingOccurrences(of: "\\", with: "")
+        return replacingOccurrences(of: "\\", with: "")
     }
     
     /// Converts between the straight quotes and the slanted quotes
     func escapeQuotes() -> String {
-        let quotedText = self.replacingOccurrences(of: "“|”", with: "[\"|”]", options: .regularExpression, range: nil)
+        let quotedText = replacingOccurrences(of: "“|”", with: "[\"|”]", options: .regularExpression, range: nil)
         return quotedText
     }
 }

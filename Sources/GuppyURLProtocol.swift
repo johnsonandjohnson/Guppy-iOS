@@ -56,7 +56,7 @@ public class GuppyURLProtocol: URLProtocol {
     }
     
     override public func startLoading() {
-        URLProtocol.setProperty("true", forKey: GuppyURLProtocol.key, in: request as! NSMutableURLRequest)
+        URLProtocol.setProperty(true, forKey: GuppyURLProtocol.key, in: request as! NSMutableURLRequest)
         
         // TODO: Going to be creating a lot of URL Sessions abstract this out
         let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
