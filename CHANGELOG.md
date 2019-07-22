@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ## Unreleased
 
+---
+
+## Releases
+
+---
+
+### 0.6.0
+
 #### Changed
 
 * Changed to use systemFont for display
@@ -14,10 +22,6 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 * Fixed issue where `motionBegan` was intercepted and did not call super
 * Fixed issue where json decoding used ascii encoding instead of utf8
-
----
-
-## Releases
 
 ---
 
