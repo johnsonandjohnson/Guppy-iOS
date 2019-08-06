@@ -86,6 +86,11 @@ iOS 10.0+
 
 ## Installation
 
+Guppy is best used in non-production environments. By default, installing the Guppy framework will automatically make it available when the user shakes their device. To avoid this do any combination of the following:
+* If you are using multiple targets for different environments, only include the Guppy framework in the non-production targets
+* If you are using one target with multiple configurations for different environments, only include the Guppy framework in the non-production configuration
+* Set `Guppy.shared.showOnShake = false` in your `didFinishLaunchingWithOptions` for the specific times where Guppy should not be available
+
 ### [CocoaPods](https://cocoapods.org)
 
 ```ruby
