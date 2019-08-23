@@ -10,6 +10,14 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ---
 
+### 0.6.1
+
+#### Changed
+
+* Moved repository location
+
+---
+
 ### 0.6.0
 
 #### Changed
