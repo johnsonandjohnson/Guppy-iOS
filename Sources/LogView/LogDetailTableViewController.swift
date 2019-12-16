@@ -173,7 +173,7 @@ extension LogDetailTableViewController: UISearchResultsUpdating {
 extension LogDetailTableViewController: CollapsibleHeaderDelegate {
     
     func toggleSection(at index: Int) {
-        var sections = isFiltering() ? filteredSections : collapsibleSections
+        let sections = isFiltering() ? filteredSections : collapsibleSections
         sections[index].isCollapsed = !sections[index].isCollapsed
         
         tableView.beginUpdates()
