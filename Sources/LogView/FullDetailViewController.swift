@@ -39,6 +39,9 @@ class FullDetailViewController: UIViewController {
         if let searchText = searchText {
             searchBar.text = searchText
             textView.attributedText = textView.text.highlight(searchText: searchText)
+            if #available(iOS 13, *) {
+                textView.textColor = .label
+            }
         }
     }
 }
