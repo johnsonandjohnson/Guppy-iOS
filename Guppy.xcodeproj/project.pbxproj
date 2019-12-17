@@ -18,6 +18,7 @@
 		4D1CC73422DCF8A900578233 /* LogTableViewBuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CC73322DCF8A900578233 /* LogTableViewBuilderTests.swift */; };
 		4D1CC73622DCF8ED00578233 /* StatusCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CC73522DCF8ED00578233 /* StatusCodeTests.swift */; };
 		4D1CC73922DCF93700578233 /* CollapsibleSectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1CC73822DCF93700578233 /* CollapsibleSectionTests.swift */; };
+		4D27B8E123A92A4600FA989E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D27B8E023A92A4600FA989E /* NavigationController.swift */; };
 		4D6CDAD222DE0DF300DBEF6E /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D6CDACE22DE0DF300DBEF6E /* README.md */; };
 		4D6CDAD322DE0DF300DBEF6E /* Guppy.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 4D6CDACF22DE0DF300DBEF6E /* Guppy.podspec */; };
 		4D6CDAD422DE0DF300DBEF6E /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = 4D6CDAD022DE0DF300DBEF6E /* CHANGELOG.md */; };
@@ -104,6 +105,7 @@
 		4D1CC73322DCF8A900578233 /* LogTableViewBuilderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTableViewBuilderTests.swift; sourceTree = "<group>"; };
 		4D1CC73522DCF8ED00578233 /* StatusCodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeTests.swift; sourceTree = "<group>"; };
 		4D1CC73822DCF93700578233 /* CollapsibleSectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleSectionTests.swift; sourceTree = "<group>"; };
+		4D27B8E023A92A4600FA989E /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		4D6CDACE22DE0DF300DBEF6E /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		4D6CDACF22DE0DF300DBEF6E /* Guppy.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Guppy.podspec; sourceTree = "<group>"; };
 		4D6CDAD022DE0DF300DBEF6E /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = CHANGELOG.md; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				4D85804422D7B25C0048C446 /* LogTableViewBuilder.swift */,
 				4D85804522D7B25C0048C446 /* LogDetailTableViewController.swift */,
 				4D85804622D7B25C0048C446 /* LogTableViewController.swift */,
+				4D27B8E023A92A4600FA989E /* NavigationController.swift */,
 				4D85804722D7B25C0048C446 /* Views */,
 			);
 			path = LogView;
@@ -552,6 +555,7 @@
 			files = (
 				4D85806622D7B25C0048C446 /* LogTableViewBuilder.swift in Sources */,
 				4D85807F22D7B25C0048C446 /* ReuseableViews.swift in Sources */,
+				4D27B8E123A92A4600FA989E /* NavigationController.swift in Sources */,
 				4D85807922D7B25C0048C446 /* LogItem.swift in Sources */,
 				4D85806722D7B25C0048C446 /* LogDetailTableViewController.swift in Sources */,
 				4D85807B22D7B25C0048C446 /* UIViewControllerExtensions.swift in Sources */,
