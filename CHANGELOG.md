@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file. Guppy adher
 #### Fixed
 
 * Resolved Swift 5.1 warning on Xcode 11.2
+* Fixed search bar appearance with iOS 13
 
 ---
 

@@ -62,7 +62,6 @@ class LogDetailTableViewController: UIViewController {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         searchController.searchResultsUpdater = self
-        searchController.searchBar.tintColor = .white
 
         definesPresentationContext = true
     }
