@@ -27,11 +27,15 @@ extension String {
         let regex = try? NSRegularExpression(pattern: searchText.escapeQuotes(), options: .caseInsensitive)
         attributedString.addAttribute(.font, value: UIFont.systemFont(ofSize: 17), range: range)
         
+        if #available(iOS 13.0, *) {
+            attributedString.addAttribute(.foregroundColor, value: UIColor.label, range: range)
+        }
+        
         regex?.enumerateMatches(in: self, options: .reportProgress, range: range) { textCheckingResult, _, _ in
             guard let subRange = textCheckingResult?.range else {
                 return
             }
-            attributedString.addAttribute(NSAttributedString.Key.backgroundColor, value: UIColor.yellow, range: subRange)
+            attributedString.addAttribute(.backgroundColor, value: UIColor.lightText, range: subRange)
         }
         
         return attributedString
