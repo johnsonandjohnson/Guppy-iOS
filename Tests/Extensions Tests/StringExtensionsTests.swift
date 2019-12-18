@@ -34,18 +34,26 @@ class StringExtensionsTests: XCTestCase {
         var startStringRange = NSRange(location: 0, length: startString.count)
         let startStringAttributes = attributedString.attributes(at: 0, effectiveRange: &startStringRange)
 
-        XCTAssertEqual(startStringAttributes.count, 1)
-        if let attribute = startStringAttributes.first {
+        XCTAssertEqual(startStringAttributes.count, 2)
+        if let attribute = startStringAttributes.first(where: { $0.key == .font }) {
             XCTAssertEqual(attribute.key, .font)
             XCTAssertEqual(attribute.value as? UIFont, font)
         } else {
             XCTFail("Missing font attribute")
         }
-
+        if #available(iOS 13.0, *) {
+           if let attribute = startStringAttributes.first(where: { $0.key == .foregroundColor }) {
+               XCTAssertEqual(attribute.key, .foregroundColor)
+               XCTAssertEqual(attribute.value as? UIColor, .label)
+           } else {
+               XCTFail("Missing foreground attribute")
+           }
+        }
+    
         var middleStringRange = NSRange(location: 0, length: middleString.count)
         let middleStringAttributes = attributedString.attributes(at: startString.count, effectiveRange: &middleStringRange)
 
-        XCTAssertEqual(middleStringAttributes.count, 2)
+        XCTAssertEqual(middleStringAttributes.count, 3)
         if let attribute = middleStringAttributes.first(where: { $0.key == .font }) {
             XCTAssertEqual(attribute.key, .font)
             XCTAssertEqual(attribute.value as? UIFont, font)
@@ -54,20 +62,37 @@ class StringExtensionsTests: XCTestCase {
         }
         if let attribute = middleStringAttributes.first(where: { $0.key == .backgroundColor }) {
             XCTAssertEqual(attribute.key, .backgroundColor)
-            XCTAssertEqual(attribute.value as? UIColor, .yellow)
+            XCTAssertEqual(attribute.value as? UIColor, .lightText)
         } else {
             XCTFail("Missing backgroundColor attribute")
+        }
+        if #available(iOS 13.0, *) {
+            if let attribute = middleStringAttributes.first(where: { $0.key == .foregroundColor }) {
+                XCTAssertEqual(attribute.key, .foregroundColor)
+                XCTAssertEqual(attribute.value as? UIColor, .label)
+            } else {
+                XCTFail("Missing foreground attribute")
+            }
         }
 
         var endStringRange = NSRange(location: 0, length: endString.count)
         let endStringAttributes = attributedString.attributes(at: startString.count + middleString.count, effectiveRange: &endStringRange)
 
-        XCTAssertEqual(endStringAttributes.count, 1)
-        if let attribute = endStringAttributes.first {
+        XCTAssertEqual(endStringAttributes.count, 2)
+        if let attribute = endStringAttributes.first(where: { $0.key == .font }) {
             XCTAssertEqual(attribute.key, .font)
             XCTAssertEqual(attribute.value as? UIFont, font)
         } else {
             XCTFail("Missing font attribute")
+        }
+        
+        if #available(iOS 13.0, *) {
+            if let attribute = endStringAttributes.first(where: { $0.key == .foregroundColor }) {
+                XCTAssertEqual(attribute.key, .foregroundColor)
+                XCTAssertEqual(attribute.value as? UIColor, .label)
+            } else {
+                XCTFail("Missing foreground attribute")
+            }
         }
     }
 
