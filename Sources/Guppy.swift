@@ -60,7 +60,7 @@ public class Guppy {
         }
 
         // If Guppy is already being displayed, we can return and ignore
-        if let navController = topViewController as? UINavigationController, navController.viewControllers.first is LogTableViewController {
+        if let navController = topViewController as? NavigationController, navController.viewControllers.first is LogTableViewController {
             return
         }
 
@@ -73,7 +73,7 @@ public class Guppy {
 
         logTableViewController.logItems = Guppy.shared.logItems
 
-        let navigationController = UINavigationController(rootViewController: logTableViewController)
+        let navigationController = NavigationController(rootViewController: logTableViewController)
         navigationController.modalPresentationStyle = .overFullScreen
         navigationController.modalPresentationCapturesStatusBarAppearance = true
         topViewController.present(navigationController, animated: true)
@@ -109,7 +109,28 @@ public class Guppy {
         }
     }
 
+    // Prevent initialization of singleton
     private init() {
-        // Prevent initialization of singleton
+        configureAppearance()
+    }
+
+    private func configureAppearance() {
+        let instances = [NavigationController.self]
+        if #available(iOS 13.0, *) {
+            let navBarAppearance = UINavigationBarAppearance()
+            navBarAppearance.configureWithOpaqueBackground()
+            navBarAppearance.backgroundColor = Colors.NavigationBar.lightBlue
+            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+
+            UINavigationBar.appearance(whenContainedInInstancesOf: instances).standardAppearance = navBarAppearance
+            UINavigationBar.appearance(whenContainedInInstancesOf: instances).scrollEdgeAppearance = navBarAppearance
+        } else {
+            UINavigationBar.appearance(whenContainedInInstancesOf: instances).barTintColor = Colors.NavigationBar.lightBlue
+            UINavigationBar.appearance(whenContainedInInstancesOf: instances).barStyle = .black
+            UINavigationBar.appearance(whenContainedInInstancesOf: instances).isTranslucent = false
+        }
+
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: instances).tintColor = .white
+        UITextField.appearance(whenContainedInInstancesOf: instances).backgroundColor = .white
     }
 }
