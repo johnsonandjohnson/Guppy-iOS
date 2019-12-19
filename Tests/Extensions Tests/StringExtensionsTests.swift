@@ -62,7 +62,7 @@ class StringExtensionsTests: XCTestCase {
         }
         if let attribute = middleStringAttributes.first(where: { $0.key == .backgroundColor }) {
             XCTAssertEqual(attribute.key, .backgroundColor)
-            XCTAssertEqual(attribute.value as? UIColor, .lightText)
+            XCTAssertEqual(attribute.value as? UIColor, .gray)
         } else {
             XCTFail("Missing backgroundColor attribute")
         }
