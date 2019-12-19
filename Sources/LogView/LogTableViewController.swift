@@ -40,7 +40,7 @@ class LogTableViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationController?.navigationBar.barTintColor = Colors.NavigationBar.lightBlue
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.tintColor = .white

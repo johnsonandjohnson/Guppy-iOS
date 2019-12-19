@@ -35,7 +35,7 @@ extension String {
             guard let subRange = textCheckingResult?.range else {
                 return
             }
-            attributedString.addAttribute(.backgroundColor, value: UIColor.lightText, range: subRange)
+            attributedString.addAttribute(.backgroundColor, value: UIColor.systemGray, range: subRange)
         }
         
         return attributedString
