@@ -34,18 +34,6 @@ class LogTableViewController: UIViewController {
     var selectedLogItem: LogItem!
     var domainSections: [CollapsibleSection<LogItem>] = []
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.barTintColor = Colors.NavigationBar.lightBlue
-        navigationController?.navigationBar.barStyle = .black
-        navigationController?.navigationBar.tintColor = .white
-        navigationController?.navigationBar.isTranslucent = false
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
