@@ -6,18 +6,20 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ---
 
+## Releases
+
+---
+
+### 0.7.0
+
+#### Added
+
+* Support for dark mode on iOS 13
+
 #### Fixed
 
 * Resolved Swift 5.1 warning on Xcode 11.2
 * Fixed search bar appearance with iOS 13
-
-#### Added
-
-* Supporting dark mode on iOS 13
-
----
-
-## Releases
 
 ---
 
