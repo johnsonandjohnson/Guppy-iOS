@@ -45,7 +45,8 @@ class GuppyURLProtocolTests: XCTestCase {
         let e = expectation(description: "myExpectation")
         
         URLSession.shared.dataTask(with: jsonURL) { _, _, error in
-            // TODO: GuppyURLProtocol does not have a way to intercept data before calling completion on a dataTask. Need to a small delay here as a temp fix to help race condition between writting the new data to Guppy and reading it.
+            // GuppyURLProtocol does not have a way to intercept data before calling completion on a dataTask.
+            // Need to add a small delay here to help race condition between writing the new data to Guppy and reading it.
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 if let error = error {
                     XCTFail(error.localizedDescription)

@@ -18,16 +18,12 @@
 
 class LogTableViewController: UIViewController {
     
-    @IBOutlet private var tableView: UITableView!
+    @IBOutlet private var tableView: UITableView?
     
     var logItems: [LogItem] = [] {
         didSet {
             domainSections = LogTableViewBuilder.getDomainSections(from: logItems, in: domainSections)
-
-            // TODO: Is there a better way of handling this case? TableView does not exist on prepare to segue. Make it optional
-            if tableView != nil {
-                tableView.reloadData()
-            }
+            tableView?.reloadData()
         }
     }
     
@@ -41,6 +37,11 @@ class LogTableViewController: UIViewController {
     }
     
     func setUpTableView() {
+        guard let tableView = tableView else {
+            assertionFailure("tableView is unexpectedly nil")
+            return
+        }
+
         tableView.dataSource = self
         tableView.delegate = self
         
@@ -122,15 +123,15 @@ extension LogTableViewController: CollapsibleHeaderDelegate {
     func toggleSection(at index: Int) {
         domainSections[index].isCollapsed = !domainSections[index].isCollapsed
 
-        tableView.beginUpdates()
+        tableView?.beginUpdates()
 
         if domainSections[index].isCollapsed {
-            tableView.deleteRows(at: indexPaths(for: index), with: .top)
+            tableView?.deleteRows(at: indexPaths(for: index), with: .top)
         } else {
-            tableView.insertRows(at: indexPaths(for: index), with: .top)
+            tableView?.insertRows(at: indexPaths(for: index), with: .top)
         }
 
-        tableView.endUpdates()
+        tableView?.endUpdates()
     }
 
     func indexPaths(for section: Int) -> [IndexPath] {
