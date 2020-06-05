@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  Build:
+  Build & Test:
     runs-on: macOS-latest
 
     steps:
@@ -17,7 +17,6 @@ jobs:
     - name: Build & Test
       run: |
         xcodebuild -scheme Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest' build test
-        swiftlint --strict
         bash <(curl -s https://codecov.io/bash)
 
   SwiftLint:
