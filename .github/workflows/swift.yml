@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  Build & Test:
+  Build-Test:
     runs-on: macOS-latest
 
     steps:
