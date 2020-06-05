@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  build:
+  Build:
     runs-on: macOS-latest
 
     steps:
@@ -19,3 +19,13 @@ jobs:
         xcodebuild -scheme Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest' build test
         swiftlint --strict
         bash <(curl -s https://codecov.io/bash)
+
+  SwiftLint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: SwiftLint
+        uses: norio-nomura/action-swiftlint@3.1.0
+        with:
+          args: --strict
