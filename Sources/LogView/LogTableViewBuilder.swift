@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 class LogTableViewBuilder {
     
     static func getDomainSections(from logItems: [LogItem], in domainSections: [CollapsibleSection<LogItem>] = []) -> [CollapsibleSection<LogItem>] {

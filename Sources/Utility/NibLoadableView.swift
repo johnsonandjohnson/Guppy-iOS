@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 protocol NibLoadableView: AnyObject {
     
     static var nibName: String { get }

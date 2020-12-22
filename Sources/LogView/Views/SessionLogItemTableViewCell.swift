@@ -16,6 +16,9 @@
 //  limitations under the License.
 //
 
+import Foundation
+import UIKit
+
 class SessionLogItemTableViewCell: UITableViewCell, NibLoadableView {
 
     @IBOutlet private var typeLabel: UILabel!

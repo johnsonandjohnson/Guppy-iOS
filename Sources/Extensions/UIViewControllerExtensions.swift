@@ -16,13 +16,15 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 extension UIViewController {
     
     /// Instantiates view controller from Pod bundle. The view controller that is being instantiated **must** have the same name as its storyboard ID.
     static func instantiateFromStoryboard<T: UIViewController>() -> T {
         
         let viewControllerName = String(describing: T.self)
-        let storyboard = UIStoryboard(name: viewControllerName, bundle: Bundle(for: self))
+        let storyboard = UIStoryboard(name: viewControllerName, bundle: .resource)
         
         let viewController = storyboard.instantiateViewController(withIdentifier: viewControllerName) as! T
         

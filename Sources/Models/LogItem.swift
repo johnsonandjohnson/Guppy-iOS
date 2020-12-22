@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import Foundation
+
 public protocol LogItem {
     
     var domain: String { get }

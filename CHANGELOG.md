@@ -10,6 +10,19 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ---
 
+### 0.8.0
+
+#### Added
+
+* Support for Swift Package Manager
+
+#### Changed
+
+* Minimum iOS version supported is now iOS 12.0
+* Removed deprecated `SniffURLProtocol` & `getSniffURLProtocol()`
+
+---
+
 ### 0.7.0
 
 #### Added

@@ -16,7 +16,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: Build & Test
       run: |
-        xcodebuild -scheme Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11,OS=latest' build test
+        xcodebuild -scheme Guppy -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest' build test
         bash <(curl -s https://codecov.io/bash)
 
   SwiftLint:

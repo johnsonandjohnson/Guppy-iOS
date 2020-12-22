@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 class LogDetailTableViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
@@ -54,11 +56,7 @@ class LogDetailTableViewController: UIViewController {
     }
     
     private func setUpSearchController() {
-        if #available(iOS 11.0, *) {
-            navigationItem.searchController = searchController
-        } else {
-            tableView.tableHeaderView = searchController.searchBar
-        }
+        navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search"
         searchController.searchResultsUpdater = self
