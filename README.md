@@ -81,8 +81,8 @@ class SessionManager: Alamofire.SessionManager {
 
 ## Requirements
 
-Xcode 10.2+
-iOS 10.0+
+Xcode 12.0+
+iOS 12.0+
 
 ## Installation
 
@@ -90,6 +90,12 @@ Guppy is best used in non-production environments. By default, installing the Gu
 * If you are using multiple targets for different environments, only include the Guppy framework in the non-production targets
 * If you are using one target with multiple configurations for different environments, only include the Guppy framework in the non-production configuration
 * Set `Guppy.shared.showOnShake = false` in your `didFinishLaunchingWithOptions` for the specific times where Guppy should not be available
+
+### [Swift Package Manager](https://swift.org/package-manager/)
+
+```
+https://github.com/johnsonandjohnson/Guppy-iOS.git
+```
 
 ### [CocoaPods](https://cocoapods.org)
 

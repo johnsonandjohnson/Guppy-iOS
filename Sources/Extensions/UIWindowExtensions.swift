@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 extension UIWindow {
     
     override open func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {

@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 class LogTableViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView?
@@ -32,7 +34,6 @@ class LogTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setUpTableView()
     }
     

@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import Foundation
+
 protocol Session {
     
     var request: URLRequest { get }

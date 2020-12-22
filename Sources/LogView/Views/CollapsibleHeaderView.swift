@@ -16,6 +16,9 @@
 //  limitations under the License.
 //
 
+import Foundation
+import UIKit
+
 protocol CollapsibleHeaderDelegate: AnyObject {
     
     func toggleSection(at index: Int)

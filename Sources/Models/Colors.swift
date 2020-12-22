@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 struct Colors {
     
     struct Cell {

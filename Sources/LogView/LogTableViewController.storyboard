@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Guppy-->
         <scene sceneID="gZC-Nv-d0U">
             <objects>
-                <viewController storyboardIdentifier="LogTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="HT6-OX-TjZ" customClass="LogTableViewController" customModule="Guppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LogTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="HT6-OX-TjZ" customClass="LogTableViewController" customModule="Guppy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uBQ-jj-2WE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +35,8 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="a4I-5L-yLE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="TST-43-yC9" firstAttribute="leading" secondItem="a4I-5L-yLE" secondAttribute="leading" id="9Yp-Ij-KIM"/>
@@ -47,7 +49,6 @@
                             <constraint firstItem="a4I-5L-yLE" firstAttribute="trailing" secondItem="o8q-RT-tA6" secondAttribute="trailing" id="wC4-rj-DI9"/>
                             <constraint firstItem="o8q-RT-tA6" firstAttribute="leading" secondItem="a4I-5L-yLE" secondAttribute="leading" id="y9C-qk-pyo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="a4I-5L-yLE"/>
                     </view>
                     <navigationItem key="navigationItem" title="Guppy" id="kLY-n6-tf8">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Dry-z0-lGE"/>
@@ -75,7 +76,7 @@
         <!--Request-->
         <scene sceneID="DUI-Ii-rmd">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Bs0-UH-R8z" customClass="LogDetailTableViewController" customModule="Guppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Bs0-UH-R8z" customClass="LogDetailTableViewController" customModule="Guppy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PB1-dg-hAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -88,7 +89,8 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="d8b-NK-YZS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="d8b-NK-YZS" firstAttribute="trailing" secondItem="nJ0-5a-qzG" secondAttribute="trailing" id="DRf-uD-soP"/>
@@ -99,7 +101,6 @@
                             <constraint firstItem="nJ0-5a-qzG" firstAttribute="leading" secondItem="d8b-NK-YZS" secondAttribute="leading" id="irB-lx-apk"/>
                             <constraint firstItem="nJ0-5a-qzG" firstAttribute="top" secondItem="d8b-NK-YZS" secondAttribute="top" id="jhA-AO-lnG"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="d8b-NK-YZS"/>
                     </view>
                     <navigationItem key="navigationItem" title="Request" id="lZe-ph-dC9">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="iaM-gs-VVd">
@@ -120,7 +121,7 @@
         <!--Detail-->
         <scene sceneID="pUb-pc-Rhb">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" title="Detail" id="YkD-60-CvC" customClass="FullDetailViewController" customModule="Guppy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" title="Detail" id="YkD-60-CvC" customClass="FullDetailViewController" customModule="Guppy" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fhb-hl-IhL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -149,7 +150,8 @@
                                 <rect key="frame" x="128.5" y="483" width="118" height="96"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="PWd-Qn-D2T"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="PWd-Qn-D2T" firstAttribute="bottom" secondItem="u3i-5P-2Dd" secondAttribute="bottom" constant="44" id="0SF-Sn-GHY"/>
@@ -160,7 +162,6 @@
                             <constraint firstItem="PWd-Qn-D2T" firstAttribute="bottom" secondItem="eqt-5W-3UW" secondAttribute="bottom" constant="5" id="taJ-Ei-4BP"/>
                             <constraint firstItem="u3i-5P-2Dd" firstAttribute="centerX" secondItem="fhb-hl-IhL" secondAttribute="centerX" id="vxE-4I-2DT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="PWd-Qn-D2T"/>
                     </view>
                     <connections>
                         <outlet property="searchBar" destination="Jeh-Po-o99" id="5tU-KE-0Fu"/>
@@ -175,5 +176,8 @@
     <resources>
         <image name="Guppy" width="118" height="96"/>
         <image name="Riverbed" width="375" height="173"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

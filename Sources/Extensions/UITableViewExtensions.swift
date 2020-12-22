@@ -16,19 +16,19 @@
 //  limitations under the License.
 //
 
+import UIKit
+
 extension UITableView {
     
     // Nib registration
     func register<T: UITableViewCell>(_: T.Type) where T: NibLoadableView {
-        let bundle = Bundle(for: T.self)
-        let nib = UINib(nibName: T.nibName, bundle: bundle)
+        let nib = UINib(nibName: T.nibName, bundle: .resource)
         
         register(nib, forCellReuseIdentifier: T.defaultReuseIdentifier)
     }
     
     func register<T: UITableViewHeaderFooterView>(_: T.Type) where T: NibLoadableView {
-        let bundle = Bundle(for: T.self)
-        let nib = UINib(nibName: T.nibName, bundle: bundle)
+        let nib = UINib(nibName: T.nibName, bundle: .resource)
         
         register(nib, forHeaderFooterViewReuseIdentifier: T.defaultReuseIdentifier)
     }

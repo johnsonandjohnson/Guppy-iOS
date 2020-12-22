@@ -16,6 +16,8 @@
 //  limitations under the License.
 //
 
+import Foundation
+
 struct NetworkData: LogItem, Session {
     let domain: String
     let date: Date
