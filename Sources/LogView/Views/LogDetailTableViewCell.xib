@@ -16,18 +16,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-qv-Eln">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="100" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-qv-Eln">
                         <rect key="frame" x="16" y="11" width="288" height="22"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Ee2-qv-Eln" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="IFI-vK-x4q"/>
-                    <constraint firstItem="Ee2-qv-Eln" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="l7I-qt-uP3"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Ee2-qv-Eln" secondAttribute="bottom" id="pfK-vP-H12"/>
-                    <constraint firstItem="Ee2-qv-Eln" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="sXf-UM-WIO"/>
+                    <constraint firstItem="Ee2-qv-Eln" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="43z-eP-LWi"/>
+                    <constraint firstItem="Ee2-qv-Eln" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="NIp-9P-Nb7"/>
+                    <constraint firstItem="Ee2-qv-Eln" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="eib-QN-Lpm"/>
+                    <constraint firstItem="Ee2-qv-Eln" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xgJ-2k-Rka"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

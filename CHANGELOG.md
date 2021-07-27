@@ -6,6 +6,12 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ---
 
+#### Added
+
+* Support for dynamic font sizes
+
+---
+
 ## Releases
 
 ---

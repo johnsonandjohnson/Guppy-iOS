@@ -20,6 +20,17 @@ import UIKit
 import Guppy
 
 class ViewController: UIViewController {
+    
+    @IBOutlet private var buttons: [UIButton]!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        buttons.forEach {
+            $0.titleLabel?.adjustsFontForContentSizeCategory = true
+            $0.titleLabel?.adjustsFontSizeToFitWidth = true
+        }
+    }
 
     @IBAction private func getRequestPressed() {
         let url = URL(string: "http://api.github.com/users")!
