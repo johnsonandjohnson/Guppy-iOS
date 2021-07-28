@@ -9,6 +9,11 @@ All notable changes to this project will be documented in this file. Guppy adher
 #### Added
 
 * Support for dynamic font sizes
+* Support for mulitple window scenes
+
+#### Changed
+
+* Minimum iOS version supported is now iOS 13.0
 
 ---
 

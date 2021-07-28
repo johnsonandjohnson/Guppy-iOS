@@ -27,10 +27,7 @@ extension String {
         let range = NSRange(location: 0, length: count)
         let regex = try? NSRegularExpression(pattern: searchText.escapeQuotes(), options: .caseInsensitive)
         attributedString.addAttribute(.font, value: UIFont.preferredFont(forTextStyle: .body), range: range)
-        
-        if #available(iOS 13.0, *) {
-            attributedString.addAttribute(.foregroundColor, value: UIColor.label, range: range)
-        }
+        attributedString.addAttribute(.foregroundColor, value: UIColor.label, range: range)
         
         regex?.enumerateMatches(in: self, options: .reportProgress, range: range) { textCheckingResult, _, _ in
             guard let subRange = textCheckingResult?.range else {
