@@ -81,8 +81,8 @@ class SessionManager: Alamofire.SessionManager {
 
 ## Requirements
 
-Xcode 12.0+
-iOS 12.0+
+* Xcode 12.0+
+* iOS 13.0+
 
 ## Installation
 

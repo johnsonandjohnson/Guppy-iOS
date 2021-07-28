@@ -45,7 +45,7 @@ public class Guppy {
     }
 
     public func presentLogViewController() {
-        guard var topViewController = UIApplication.shared.keyWindow?.rootViewController else {
+        guard var topViewController = UIApplication.shared.firstKeyWindow?.rootViewController else {
             assertionFailure("Could not find root view controller")
             return
         }
@@ -111,19 +111,14 @@ public class Guppy {
 
     private func configureAppearance() {
         let instances = [NavigationController.self]
-        if #available(iOS 13.0, *) {
-            let navBarAppearance = UINavigationBarAppearance()
-            navBarAppearance.configureWithOpaqueBackground()
-            navBarAppearance.backgroundColor = Colors.NavigationBar.lightBlue
-            navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
-
-            UINavigationBar.appearance(whenContainedInInstancesOf: instances).standardAppearance = navBarAppearance
-            UINavigationBar.appearance(whenContainedInInstancesOf: instances).scrollEdgeAppearance = navBarAppearance
-        } else {
-            UINavigationBar.appearance(whenContainedInInstancesOf: instances).barTintColor = Colors.NavigationBar.lightBlue
-            UINavigationBar.appearance(whenContainedInInstancesOf: instances).barStyle = .black
-            UINavigationBar.appearance(whenContainedInInstancesOf: instances).isTranslucent = false
-        }
+        
+        let navBarAppearance = UINavigationBarAppearance()
+        navBarAppearance.configureWithOpaqueBackground()
+        navBarAppearance.backgroundColor = Colors.NavigationBar.lightBlue
+        navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        
+        UINavigationBar.appearance(whenContainedInInstancesOf: instances).standardAppearance = navBarAppearance
+        UINavigationBar.appearance(whenContainedInInstancesOf: instances).scrollEdgeAppearance = navBarAppearance
 
         UIBarButtonItem.appearance(whenContainedInInstancesOf: instances).tintColor = .white
         UITextField.appearance(whenContainedInInstancesOf: instances).backgroundColor = .white
