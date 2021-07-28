@@ -27,7 +27,7 @@ protocol CollapsibleHeaderDelegate: AnyObject {
 class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
 
     @IBOutlet private var titleLabel: UILabel!
-    @IBOutlet private var arrowView: ArrowView!
+    @IBOutlet private var arrowImageView: UIImageView!
     
     let collapsedAngle = CGFloat.pi * 3 / 2
     let uncollapsedAngle = CGFloat.zero
@@ -61,6 +61,6 @@ class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
     
     private func updateChevron(isCollapsed: Bool) {
         let angle = isCollapsed ? collapsedAngle : uncollapsedAngle
-        arrowView.transform = CGAffineTransform(rotationAngle: angle)
+        arrowImageView.transform = CGAffineTransform(rotationAngle: angle)
     }
 }
