@@ -119,8 +119,9 @@ public class Guppy {
         
         UINavigationBar.appearance(whenContainedInInstancesOf: instances).standardAppearance = navBarAppearance
         UINavigationBar.appearance(whenContainedInInstancesOf: instances).scrollEdgeAppearance = navBarAppearance
-
         UIBarButtonItem.appearance(whenContainedInInstancesOf: instances).tintColor = .white
-        UITextField.appearance(whenContainedInInstancesOf: instances).backgroundColor = .white
+        
+        UISearchTextField.appearance(whenContainedInInstancesOf: instances).backgroundColor = .white
+        UISearchTextField.appearance(whenContainedInInstancesOf: instances).tintColor = Colors.NavigationBar.lightBlue
     }
 }
