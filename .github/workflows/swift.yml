@@ -7,24 +7,29 @@ on:
   push:
     branches:
       - main
+      
+env:
+   DERIVED_DATA_PATH: build
 
 jobs:
   Build-Test:
     runs-on: macOS-latest
 
     steps:
-    - uses: actions/checkout@v1
-    - name: Build & Test
-      run: |
-        xcodebuild -scheme Guppy -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest' build test
-        bash <(curl -s https://codecov.io/bash)
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Build & Test
+        run: xcodebuild -scheme Guppy -destination 'platform=iOS Simulator,name=iPhone 12,OS=latest' -derivedDataPath $DERIVED_DATA_PATH build test
+      - name: Codecov
+        run: bash <(curl -s https://codecov.io/bash) -D $DERIVED_DATA_PATH -J Guppy
 
   SwiftLint:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - name: Checkout
+        uses: actions/checkout@v1
       - name: SwiftLint
-        uses: norio-nomura/action-swiftlint@3.1.0
+        uses: norio-nomura/action-swiftlint@3.2.1
         with:
           args: --strict
