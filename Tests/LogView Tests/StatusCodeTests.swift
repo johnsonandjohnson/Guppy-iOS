@@ -29,8 +29,13 @@ class StatusCodeTests: XCTestCase {
     }
 
     func testColor() {
-        XCTAssertEqual(StatusCode.color(for: 200), Colors.Status.darkGreen)
-        XCTAssertEqual(StatusCode.color(for: 299), Colors.Status.darkGreen)
+        let lightMode = UITraitCollection(userInterfaceStyle: .light)
+        XCTAssertEqual(StatusCode.color(for: 200).resolvedColor(with: lightMode), Colors.Status.darkGreen.resolvedColor(with: lightMode))
+        XCTAssertEqual(StatusCode.color(for: 299).resolvedColor(with: lightMode), Colors.Status.darkGreen.resolvedColor(with: lightMode))
+        
+        let darkMode = UITraitCollection(userInterfaceStyle: .dark)
+        XCTAssertEqual(StatusCode.color(for: 200).resolvedColor(with: darkMode), Colors.Status.darkGreen.resolvedColor(with: darkMode))
+        XCTAssertEqual(StatusCode.color(for: 299).resolvedColor(with: darkMode), Colors.Status.darkGreen.resolvedColor(with: darkMode))
 
         XCTAssertEqual(StatusCode.color(for: 100), .red)
         XCTAssertEqual(StatusCode.color(for: 300), .red)

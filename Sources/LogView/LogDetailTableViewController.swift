@@ -58,10 +58,10 @@ class LogDetailTableViewController: UIViewController {
     private func setUpSearchController() {
         navigationItem.searchController = searchController
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search"
         searchController.searchResultsUpdater = self
-
-        definesPresentationContext = true
+        searchController.searchBar.tintColor = .white
+        searchController.searchBar.searchTextField.textColor = .black
+        searchController.searchBar.searchTextField.leftView?.tintColor = .gray
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

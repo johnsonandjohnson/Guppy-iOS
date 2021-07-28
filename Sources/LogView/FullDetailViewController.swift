@@ -29,17 +29,22 @@ class FullDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        searchBar.delegate = self
+        setUpSearchBar()
         textView.text = text
-        
-        searchBar.barTintColor = Colors.NavigationBar.lightBlue
-        searchBar.layer.borderWidth = 1
-        searchBar.layer.borderColor = Colors.NavigationBar.lightBlue.cgColor
         
         if let searchText = searchText {
             searchBar.text = searchText
             textView.attributedText = textView.text.highlight(searchText: searchText)
         }
+    }
+    
+    private func setUpSearchBar() {
+        searchBar.delegate = self
+        searchBar.barTintColor = Colors.NavigationBar.lightBlue
+        searchBar.layer.borderWidth = 1
+        searchBar.layer.borderColor = Colors.NavigationBar.lightBlue.cgColor
+        searchBar.searchTextField.textColor = .black
+        searchBar.searchTextField.leftView?.tintColor = .gray
     }
 }
 
