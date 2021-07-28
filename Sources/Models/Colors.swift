@@ -27,7 +27,17 @@ struct Colors {
 
     struct Status {
         
-        static let darkGreen = #colorLiteral(red: 0, green: 0.3921568627, blue: 0, alpha: 1)
+        // Use a darker green than the systemGreen against
+        // white/light backgrounds so it's easier to read
+        static var darkGreen: UIColor {
+            return UIColor { traitCollection -> UIColor in
+                if traitCollection.userInterfaceStyle == .dark {
+                    return .systemGreen
+                } else {
+                    return #colorLiteral(red: 0, green: 0.3921568627, blue: 0, alpha: 1)
+                }
+            }
+        }
     }
     
     struct NavigationBar {
