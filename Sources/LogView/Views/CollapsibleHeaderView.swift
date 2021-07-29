@@ -50,6 +50,9 @@ class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
         
         updateChevron(isCollapsed: isCollapsed)
         contentView.backgroundColor = backgroundColor
+        
+        accessibilityLabel = title
+        updateAccessibilityTraits()
     }
     
     @objc func tappedTitle() {
@@ -57,6 +60,11 @@ class CollapsibleHeaderView: UITableViewHeaderFooterView, NibLoadableView {
         updateChevron(isCollapsed: isCollapsed)
         
         delegate?.toggleSection(at: index)
+        updateAccessibilityTraits()
+    }
+    
+    private func updateAccessibilityTraits() {
+        accessibilityTraits = isCollapsed ? [.header, .button] : [.header, .button, .selected]
     }
     
     private func updateChevron(isCollapsed: Bool) {

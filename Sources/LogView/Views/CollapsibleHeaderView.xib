@@ -42,6 +42,9 @@
                     </constraints>
                 </view>
             </subviews>
+            <accessibility key="accessibilityConfiguration">
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <constraints>
                 <constraint firstItem="yUA-WS-ax5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="CrQ-GQ-A5E"/>
                 <constraint firstAttribute="trailing" secondItem="yUA-WS-ax5" secondAttribute="trailing" id="geV-rE-i3E"/>

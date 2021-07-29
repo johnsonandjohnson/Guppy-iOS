@@ -30,6 +30,10 @@
                     <constraint firstItem="Ee2-qv-Eln" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="xgJ-2k-Rka"/>
                 </constraints>
             </tableViewCellContentView>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" button="YES"/>
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <connections>
                 <outlet property="titleLabel" destination="Ee2-qv-Eln" id="dan-6d-ziH"/>
             </connections>
