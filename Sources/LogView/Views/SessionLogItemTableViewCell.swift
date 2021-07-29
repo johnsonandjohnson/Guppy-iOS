@@ -37,7 +37,7 @@ class SessionLogItemTableViewCell: UITableViewCell, NibLoadableView {
             statusLabel.textColor = StatusCode.color(for: statusCode)
             statusLabel.text = "\(statusCode) \(StatusCode.description(for: statusCode))"
         } else {
-            statusLabel.textColor = .black
+            statusLabel.textColor = .label
             statusLabel.text = "Unknown"
         }
     }
