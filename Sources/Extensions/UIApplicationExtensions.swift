@@ -23,8 +23,7 @@ extension UIApplication {
     var firstKeyWindow: UIWindow? {
         return connectedScenes
             .filter { $0.activationState == .foregroundActive }
-            .map { $0 as? UIWindowScene }
-            .compactMap { $0 }
+            .compactMap { $0 as? UIWindowScene }
             .first?.windows
             .first { $0.isKeyWindow }
     }

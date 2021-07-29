@@ -18,6 +18,7 @@ All notable changes to this project will be documented in this file. Guppy adher
 #### Fixed
 
 * Fixed issue where search bar text was not readable in dark mode
+* Fixed issue where unknown status was not readable in dark mode
 
 ---
 
