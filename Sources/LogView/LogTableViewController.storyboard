@@ -53,11 +53,17 @@
                     <navigationItem key="navigationItem" title="Guppy" id="kLY-n6-tf8">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Dry-z0-lGE"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="stop" id="oBp-bp-e7S">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="Close"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="closePressed" destination="HT6-OX-TjZ" id="dv0-Wh-sVS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="MuE-aI-dZl">
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="string" keyPath="accessibilityLabel" value="Clear"/>
+                            </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="removeLogs" destination="HT6-OX-TjZ" id="K5C-aq-ejy"/>
                             </connections>

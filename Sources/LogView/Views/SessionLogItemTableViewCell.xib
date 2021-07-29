@@ -66,6 +66,10 @@
                 </constraints>
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <accessibility key="accessibilityConfiguration">
+                <accessibilityTraits key="traits" button="YES"/>
+                <bool key="isElement" value="YES"/>
+            </accessibility>
             <connections>
                 <outlet property="domainLabel" destination="ZmS-B1-Wdb" id="qYJ-IL-6W4"/>
                 <outlet property="statusLabel" destination="8Zz-QU-dem" id="e0v-HL-J8F"/>

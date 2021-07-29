@@ -24,6 +24,7 @@ class LogDetailTableViewCell: UITableViewCell, NibLoadableView {
     
     func setUp(with title: String) {
         titleLabel.text = title
+        accessibilityLabel = title
     }
     
     func setUp(with title: NSAttributedString) {

@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 * Minimum iOS version supported is now iOS 13.0
 * Improved contrast of success status in dark mode
+* Improved VoiceOver accessibility
 
 #### Fixed
 

@@ -31,6 +31,7 @@ class FullDetailViewController: UIViewController {
         
         setUpSearchBar()
         textView.text = text
+        textView.accessibilityLabel = text
         
         if let searchText = searchText {
             searchBar.text = searchText
