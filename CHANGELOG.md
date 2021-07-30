@@ -4,7 +4,9 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ## Unreleased
 
----
+## Releases
+
+### 0.9.0
 
 #### Added
 
@@ -20,10 +22,6 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 * Fixed issue where search bar text was not readable in dark mode
 * Fixed issue where unknown status was not readable in dark mode
-
----
-
-## Releases
 
 ---
 
