@@ -1,4 +1,4 @@
-![Guppy](https://raw.githubusercontent.com/johnsonandjohnson/Guppy-iOS/main/Screenshots/Guppy.png)
+![Guppy](https://user-images.githubusercontent.com/4382161/149004565-ffeba0bd-c863-4165-b417-78c1350e2c6b.png)
 
 [![Platform](https://img.shields.io/badge/platform-iOS-green.svg?style=flat)](https://img.shields.io/badge/platform-iOS-blue.svg?style=flat)
 [![Swift Version](https://img.shields.io/badge/Swift-5.0+-F16D39.svg?style=flat)](https://developer.apple.com/swift)
@@ -13,12 +13,11 @@ Do you want to know what's tedious? Debugging network requests and responses if 
 
 While in the simulator you can use: `^ + ⌘ + z` to bring up Guppy or shake your phone.
 
-![Routes](https://raw.githubusercontent.com/johnsonandjohnson/Guppy-iOS/main/Screenshots/Routes.png)
-
+<img width="545" alt="Routes" src="https://user-images.githubusercontent.com/4382161/149004398-df4c8c40-eaa1-432a-b2f4-86fdf0e4a806.png">
 
 You can dig deep into the details of your network logs and share them with your team or yourself.
 
-![Details](https://raw.githubusercontent.com/johnsonandjohnson/Guppy-iOS/main/Screenshots/Details.png) 
+<img width="545" alt="Details" src="https://user-images.githubusercontent.com/4382161/149004684-37d3196d-473f-4fb3-8cde-0eee954d6ae4.png">
 
 
 ## Example
