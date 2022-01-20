@@ -22,7 +22,11 @@ import XCTest
 class GuppyURLProtocolTests: XCTestCase {
     
     var jsonURL: URL {
+        #if SWIFT_PACKAGE
         let bundle = Bundle.module
+        #else
+        let bundle = Bundle(for: Self.self)
+        #endif
         return bundle.url(forResource: "AtomicElements", withExtension: "json")!
     }
     
