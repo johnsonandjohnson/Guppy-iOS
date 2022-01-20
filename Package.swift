@@ -10,6 +10,11 @@ let package = Package(
         .library(name: "Guppy", targets: ["Guppy"])
     ],
     targets: [
-        .target(name: "Guppy", path: "Sources", exclude: ["Supporting Files/Info.plist"])
+        .target(name: "Guppy", path: "Sources", exclude: ["Supporting Files/Info.plist"]),
+        .testTarget(name: "GuppyTests",
+                    dependencies: ["Guppy"],
+                    path: "Tests",
+                    exclude: ["Supporting Files/Info.plist"],
+                    resources: [.copy("Supporting Files/AtomicElements.json")])
     ]
 )

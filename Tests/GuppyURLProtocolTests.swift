@@ -22,7 +22,7 @@ import XCTest
 class GuppyURLProtocolTests: XCTestCase {
     
     var jsonURL: URL {
-        let bundle = Bundle(for: GuppyURLProtocolTests.self)
+        let bundle = Bundle.module
         return bundle.url(forResource: "AtomicElements", withExtension: "json")!
     }
     
