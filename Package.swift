@@ -15,6 +15,6 @@ let package = Package(
                     dependencies: ["Guppy"],
                     path: "Tests",
                     exclude: ["Supporting Files/Info.plist"],
-                    resources: [.copy("Supporting Files/AtomicElements.json")])
+                    resources: [.process("Supporting Files")])
     ]
 )
