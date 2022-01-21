@@ -38,7 +38,7 @@ class SessionLogItemTableViewCell: UITableViewCell, NibLoadableView {
             statusLabel.text = "\(statusCode) \(StatusCode.description(for: statusCode))"
         } else {
             statusLabel.textColor = .label
-            statusLabel.text = "Unknown"
+            statusLabel.text = logItem.isRequestComplete ? "Unknown" : "Pending"
         }
     }
 }

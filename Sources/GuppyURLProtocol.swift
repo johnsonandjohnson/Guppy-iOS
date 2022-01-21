@@ -23,6 +23,7 @@ public class GuppyURLProtocol: URLProtocol {
     private static let key = String(describing: GuppyURLProtocol.self)
     private var dataTask: URLSessionDataTask!
     
+    var requestId: UUID?
     var response: URLResponse?
     var responseData: Data?
     var requestData: Data?
@@ -61,20 +62,36 @@ public class GuppyURLProtocol: URLProtocol {
         let urlSession = URLSession(configuration: .default, delegate: self, delegateQueue: nil)
         dataTask = urlSession.dataTask(with: request)
         dataTask.resume()
+        
+        requestId = UUID()
+        if let url = request.url, let requestId = requestId {
+            let networkData = NetworkData(id: requestId,
+                                          domain: url.absoluteString,
+                                          date: Date(),
+                                          request: request,
+                                          response: response,
+                                          responseData: responseData,
+                                          requestData: requestData,
+                                          isRequestComplete: false)
+            Guppy.shared.log(networkData)
+        }
+        
         urlSession.finishTasksAndInvalidate()
     }
     
     override public func stopLoading() {
         dataTask.cancel()
-
-        guard let url = request.url else {
-            assertionFailure("Invalid url")
-            return
+        
+        if let matchingIndex = Guppy.shared.logItems
+            .firstIndex(where: { ($0 as? NetworkData)?.id == requestId }),
+           var networkData = Guppy.shared.logItems[matchingIndex] as? NetworkData {
+            networkData.response = response
+            networkData.responseData = responseData
+            networkData.isRequestComplete = true
+            Guppy.shared.logItems[matchingIndex] = networkData
         }
 
-        let networkData = NetworkData(domain: url.absoluteString, date: Date(), request: request, response: response, responseData: responseData, requestData: requestData)
-        Guppy.shared.log(networkData)
-
+        requestId = nil
         response = nil
         dataTask = nil
         responseData = nil

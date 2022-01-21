@@ -19,11 +19,14 @@
 import Foundation
 
 struct NetworkData: LogItem, Session {
+    
+    let id: UUID
     let domain: String
     let date: Date
     let request: URLRequest
-    let response: URLResponse?
+    var response: URLResponse?
     var responseData: Data?
     var requestData: Data?
+    var isRequestComplete: Bool
     let details: String? = nil
 }

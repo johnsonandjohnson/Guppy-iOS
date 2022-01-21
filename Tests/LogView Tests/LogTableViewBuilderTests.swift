@@ -23,8 +23,22 @@ class LogTableViewBuilderTests: XCTestCase {
 
     func testGetDomainSections() {
         let domain = "google.com"
-        let logItem1 = NetworkData(domain: domain, date: Date(), request: URLRequest(url: URL(string: "https://google.com")!), response: nil, responseData: nil, requestData: nil)
-        let logItem2 = NetworkData(domain: domain, date: Date(), request: URLRequest(url: URL(string: "https://google.com")!), response: nil, responseData: nil, requestData: nil)
+        let logItem1 = NetworkData(id: UUID(),
+                                   domain: domain,
+                                   date: Date(),
+                                   request: URLRequest(url: URL(string: "https://google.com")!),
+                                   response: nil,
+                                   responseData: nil,
+                                   requestData: nil,
+                                   isRequestComplete: true)
+        let logItem2 = NetworkData(id: UUID(),
+                                   domain: domain,
+                                   date: Date(),
+                                   request: URLRequest(url: URL(string: "https://google.com")!),
+                                   response: nil,
+                                   responseData: nil,
+                                   requestData: nil,
+                                   isRequestComplete: true)
 
         let domainSections = LogTableViewBuilder.getDomainSections(from: [logItem1, logItem2])
 
@@ -56,7 +70,14 @@ class LogTableViewBuilderTests: XCTestCase {
     func testGetSections() {
         let domain = "google.com"
         let urlString = "https://google.com"
-        let logItem = NetworkData(domain: domain, date: Date(), request: URLRequest(url: URL(string: "https://google.com")!), response: nil, responseData: nil, requestData: nil)
+        let logItem = NetworkData(id: UUID(),
+                                  domain: domain,
+                                  date: Date(),
+                                  request: URLRequest(url: URL(string: "https://google.com")!),
+                                  response: nil,
+                                  responseData: nil,
+                                  requestData: nil,
+                                  isRequestComplete: true)
         let sections = LogTableViewBuilder.getSections(from: logItem)
 
         XCTAssertEqual(sections.count, 1)
