@@ -57,14 +57,28 @@ class GuppyTests: XCTestCase {
     func testLogging() {
         XCTAssertTrue(Guppy.shared.getAllLogs().isEmpty)
 
-        let logItem = NetworkData(domain: "google.com", date: Date(), request: URLRequest(url: URL(string: "https://google.com")!), response: nil, responseData: nil, requestData: nil)
+        let logItem = NetworkData(id: UUID(),
+                                  domain: "google.com",
+                                  date: Date(),
+                                  request: URLRequest(url: URL(string: "https://google.com")!),
+                                  response: nil,
+                                  responseData: nil,
+                                  requestData: nil,
+                                  isRequestComplete: true)
         Guppy.shared.log(logItem)
 
         XCTAssertEqual(Guppy.shared.getAllLogs().count, 1)
     }
 
     func testRemoveAllLogs() {
-        let logItem = NetworkData(domain: "google.com", date: Date(), request: URLRequest(url: URL(string: "https://google.com")!), response: nil, responseData: nil, requestData: nil)
+        let logItem = NetworkData(id: UUID(),
+                                  domain: "google.com",
+                                  date: Date(),
+                                  request: URLRequest(url: URL(string: "https://google.com")!),
+                                  response: nil,
+                                  responseData: nil,
+                                  requestData: nil,
+                                  isRequestComplete: true)
         Guppy.shared.log(logItem)
         XCTAssertEqual(Guppy.shared.getAllLogs().count, 1)
 

@@ -19,7 +19,8 @@
 import Foundation
 
 protocol Session {
-    
+
+    var isRequestComplete: Bool { get }
     var request: URLRequest { get }
     var response: URLResponse? { get }
     var requestData: Data? { get }
