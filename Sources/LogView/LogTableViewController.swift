@@ -52,6 +52,10 @@ class LogTableViewController: UIViewController {
         tableView.estimatedSectionHeaderHeight = 70
         tableView.register(CollapsibleHeaderView.self)
         tableView.register(SessionLogItemTableViewCell.self)
+        
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
     }
     
     @IBAction private func removeLogs() {

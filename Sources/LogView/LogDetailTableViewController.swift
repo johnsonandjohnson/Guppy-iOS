@@ -53,6 +53,10 @@ class LogDetailTableViewController: UIViewController {
         
         tableView.register(CollapsibleHeaderView.self)
         tableView.register(LogDetailTableViewCell.self)
+        
+        if #available(iOS 15.0, *) {
+            tableView.sectionHeaderTopPadding = 0
+        }
     }
     
     private func setUpSearchController() {
