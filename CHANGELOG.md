@@ -4,11 +4,21 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ## Unreleased
 
+---
+
+## Releases
+
+### 0.10.0
+
 #### Added
 
 * Support for showing pending requests
 
-## Releases
+#### Fixed
+
+* Fixed issue for iOS 15 where header padding was incorrect
+
+---
 
 ### 0.9.0
 
