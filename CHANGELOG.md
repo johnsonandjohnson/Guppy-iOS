@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file. Guppy adher
 
 ## Unreleased
 
+#### Added
+
+* Support for showing pending requests
+
 ## Releases
 
 ### 0.9.0
