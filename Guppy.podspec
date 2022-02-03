@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = 'Guppy'
-  s.version       = '0.9.0'
+  s.version       = '0.10.0'
   s.summary       = 'Guppy is a friendly fish that sniffs out all network requests.'
   s.homepage      = 'https://github.com/johnsonandjohnson/Guppy-iOS'
   s.license       = { :type => 'Apache v2.0' }
